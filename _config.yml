@@ -1,6 +1,6 @@
-title: Gyan Lakhwani
-author: Gyan Lakhwani
-email: hello@gyanl.com
+title: Akshay R Patil
+author: Akshay Patil
+email: akshayrp09@gmail.com
 description: > # this means to ignore newlines until "show_excerpts:"
   Made with <3 in Mumbai, India
 
@@ -15,10 +15,10 @@ minima:
 
   # generate social links in footer
   social_links:
-    twitter: gyanl
-    github:  gyanl
+    twitter: arpatil
+    github:  akshayrpatil
     # rss: rss
-    dribbble: gyanl
+    dribbble: arpatil
     # facebook: jekyll
     # flickr:   jekyll
     instagram: gyanl
