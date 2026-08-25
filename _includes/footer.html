@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. Built with Jekyll, hosted on GitHub Pages.</p>
+    <div class="site-footer__links">
+      {% if site.social.linkedin and site.social.linkedin != "" %}<a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+      {% if site.social.dribbble and site.social.dribbble != "" %}<a href="{{ site.social.dribbble }}" target="_blank" rel="noopener">Dribbble</a>{% endif %}
+      {% if site.social.twitter and site.social.twitter != "" %}<a href="{{ site.social.twitter }}" target="_blank" rel="noopener">Twitter</a>{% endif %}
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </div>
+  </div>
+</footer>

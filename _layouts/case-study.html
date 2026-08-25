@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<article class="case-study">
+  <header class="case-study__header wrap">
+    <a class="case-study__back" href="{{ '/' | relative_url }}#work">&larr; All work</a>
+    <h1>{{ page.title }}</h1>
+    <p class="case-study__summary">{{ page.summary }}</p>
+
+    <dl class="case-study__meta">
+      {% if page.role %}<div><dt>Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
+      {% if page.timeline %}<div><dt>Timeline</dt><dd>{{ page.timeline }}</dd></div>{% endif %}
+      {% if page.team %}<div><dt>Team</dt><dd>{{ page.team }}</dd></div>{% endif %}
+      {% if page.tools %}<div><dt>Tools</dt><dd>{{ page.tools }}</dd></div>{% endif %}
+    </dl>
+  </header>
+
+  {% if page.cover %}
+  <div class="case-study__cover wrap">
+    <img src="{{ page.cover | relative_url }}" alt="{{ page.title }} cover image">
+  </div>
+  {% endif %}
+
+  <div class="case-study__body wrap">
+    {{ content }}
+  </div>
+
+  <nav class="case-study__nextprev wrap">
+    {% assign items = site.work | sort: 'order' %}
+    {% for item in items %}
+      {% if item.url == page.url %}
+        {% assign idx = forloop.index0 %}
+      {% endif %}
+    {% endfor %}
+    {% assign next_idx = idx | plus: 1 %}
+    {% assign prev_idx = idx | minus: 1 %}
+    {% if items[next_idx] %}
+      <a class="case-study__next" href="{{ items[next_idx].url | relative_url }}">Next: {{ items[next_idx].title }} &rarr;</a>
+    {% elsif items[0] %}
+      <a class="case-study__next" href="{{ items[0].url | relative_url }}">Back to first project &rarr;</a>
+    {% endif %}
+  </nav>
+</article>

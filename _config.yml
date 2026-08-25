@@ -1,0 +1,49 @@
+title: "Akshay Patil"
+role: "Senior Product Designer"
+tagline: "I design products that make complex things feel simple."
+email: "akshayrp09@gmail.com"
+description: >-
+  Portfolio of Akshay Patil, Senior Product Designer — case studies,
+  process, and work.
+url: "https://akshayrpatil.github.io"
+baseurl: "" # user site (akshayrpatil.github.io) is always served at root
+
+logo_initials: "AP"
+
+social:
+  linkedin: ""   # e.g. https://linkedin.com/in/yourname
+  dribbble: ""
+  twitter: ""
+  resume_url: "" # link to a hosted PDF, or leave blank to hide
+
+collections:
+  work:
+    output: true
+    permalink: /work/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "work"
+    values:
+      layout: "case-study"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+markdown: kramdown
+permalink: /:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules
+  - .github

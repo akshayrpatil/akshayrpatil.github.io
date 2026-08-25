@@ -1,0 +1,13 @@
+<header class="site-nav">
+  <div class="wrap site-nav__inner">
+    <a class="site-nav__logo" href="{{ '/' | relative_url }}">{{ site.logo_initials }}</a>
+    <nav class="site-nav__links">
+      <a href="{{ '/' | relative_url }}#work">Work</a>
+      <a href="{{ '/' | relative_url }}#about">About</a>
+      {% if site.social.resume_url and site.social.resume_url != "" %}
+      <a href="{{ site.social.resume_url }}" target="_blank" rel="noopener">Resume</a>
+      {% endif %}
+      <a class="site-nav__cta" href="mailto:{{ site.email }}">Say hello</a>
+    </nav>
+  </div>
+</header>
