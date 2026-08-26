@@ -76,7 +76,7 @@ h1, h2, h3 {
 
 .site-nav.is-scrolled {
   top: 0.8rem;
-  width: min(880px, 92%);
+  width: min(1040px, 94%);
   border-radius: 999px;
   border-color: var(--border);
   background: color-mix(in srgb, var(--surface) 70%, transparent);
@@ -95,7 +95,7 @@ h1, h2, h3 {
 
 .site-nav.is-scrolled .site-nav__inner {
   height: 3.25rem;
-  padding: 0 0.5rem 0 1rem;
+  padding: 0 1.25rem;
 }
 
 .site-nav__logo {
