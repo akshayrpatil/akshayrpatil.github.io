@@ -62,10 +62,26 @@ h1, h2, h3 {
 .site-nav {
   position: sticky;
   top: 0;
-  z-index: 10;
-  backdrop-filter: blur(10px);
-  background: color-mix(in srgb, var(--bg) 85%, transparent);
-  border-bottom: 1px solid var(--border);
+  z-index: 40;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: top 0.3s ease, width 0.3s ease, margin 0.3s ease, padding 0.3s ease,
+    border-radius 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-nav.is-scrolled {
+  top: 0.8rem;
+  width: min(880px, 92%);
+  border-radius: 999px;
+  border-color: var(--border);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
 }
 
 .site-nav__inner {
@@ -73,6 +89,13 @@ h1, h2, h3 {
   align-items: center;
   justify-content: space-between;
   height: 4rem;
+  padding: 0 1.5rem;
+  transition: height 0.3s ease, padding 0.3s ease;
+}
+
+.site-nav.is-scrolled .site-nav__inner {
+  height: 3.25rem;
+  padding: 0 0.5rem 0 1rem;
 }
 
 .site-nav__logo {
@@ -87,6 +110,13 @@ h1, h2, h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: width 0.3s ease, height 0.3s ease, font-size 0.3s ease;
+}
+
+.site-nav.is-scrolled .site-nav__logo {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.05rem;
 }
 
 .site-nav__links {
