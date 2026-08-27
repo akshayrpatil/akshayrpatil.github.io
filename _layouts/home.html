@@ -1,11 +1,12 @@
 ---
 layout: default
 ---
-<section class="hero">
+<div class="intro-wrap">
   <div class="hero__glow" aria-hidden="true">
     <div class="hero__glow-blob hero__glow-blob--pink"></div>
     <div class="hero__glow-blob hero__glow-blob--blue"></div>
   </div>
+  <section class="hero">
   <div class="wrap hero__grid">
     <div class="hero__intro">
       <img class="hero__photo" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="{{ site.title }}">
@@ -26,35 +27,36 @@ layout: default
       <div class="hero__actions">
         <a class="btn btn--primary" href="{{ site.social.resume_url }}">Download Resume</a>
         {% if site.social.linkedin and site.social.linkedin != "" %}
-        <a class="icon-btn" href="{{ site.social.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a class="icon-btn icon-btn--linkedin" href="{{ site.social.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         {% endif %}
       </div>
     </div>
   </div>
-</section>
+  </section>
 
-<section class="logos">
-  <div class="logos__track">
-    <div class="logos__row">
-      <img src="{{ '/assets/images/logos/nykaa.png' | relative_url }}" alt="Nykaa">
-      <img src="{{ '/assets/images/logos/udaan-capital.png' | relative_url }}" alt="Udaan Capital">
-      <img src="{{ '/assets/images/logos/pickily.png' | relative_url }}" alt="Pickily">
-      <img src="{{ '/assets/images/logos/udaan.png' | relative_url }}" alt="Udaan">
-      <img src="{{ '/assets/images/logos/biznumbers.png' | relative_url }}" alt="BizNumbers">
-      <img src="{{ '/assets/images/logos/ignio-tcs.png' | relative_url }}" alt="ignio, TCS">
+  <section class="logos">
+    <div class="logos__track">
+      <div class="logos__row">
+        <img src="{{ '/assets/images/logos/nykaa.png' | relative_url }}" alt="Nykaa">
+        <img src="{{ '/assets/images/logos/udaan-capital.png' | relative_url }}" alt="Udaan Capital">
+        <img src="{{ '/assets/images/logos/pickily.png' | relative_url }}" alt="Pickily">
+        <img src="{{ '/assets/images/logos/udaan.png' | relative_url }}" alt="Udaan">
+        <img src="{{ '/assets/images/logos/biznumbers.png' | relative_url }}" alt="BizNumbers">
+        <img src="{{ '/assets/images/logos/ignio-tcs.png' | relative_url }}" alt="ignio, TCS">
+      </div>
+      <div class="logos__row" aria-hidden="true">
+        <img src="{{ '/assets/images/logos/nykaa.png' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/logos/udaan-capital.png' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/logos/pickily.png' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/logos/udaan.png' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/logos/biznumbers.png' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/logos/ignio-tcs.png' | relative_url }}" alt="">
+      </div>
     </div>
-    <div class="logos__row" aria-hidden="true">
-      <img src="{{ '/assets/images/logos/nykaa.png' | relative_url }}" alt="">
-      <img src="{{ '/assets/images/logos/udaan-capital.png' | relative_url }}" alt="">
-      <img src="{{ '/assets/images/logos/pickily.png' | relative_url }}" alt="">
-      <img src="{{ '/assets/images/logos/udaan.png' | relative_url }}" alt="">
-      <img src="{{ '/assets/images/logos/biznumbers.png' | relative_url }}" alt="">
-      <img src="{{ '/assets/images/logos/ignio-tcs.png' | relative_url }}" alt="">
-    </div>
-  </div>
-</section>
+  </section>
+</div>
 
 <section id="work" class="section">
   <div class="wrap">
@@ -74,6 +76,25 @@ layout: default
           {% endif %}
         </div>
       </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="strategy" class="section section--tint">
+  <div class="wrap">
+    <h2 class="section__heading"><span class="section__heading--dim">Collaboration &amp;</span> <em>strategy</em></h2>
+    <p class="section__quote">{{ site.strategy_quote }}</p>
+    <p class="section__quote-subtext">{{ site.strategy_quote_subtext }}</p>
+    <div class="work-grid">
+      {% for item in site.strategy_items %}
+      <div class="work-card work-card--static">
+        <div class="work-card__image" style="background-image:url('{{ item.cover | relative_url }}');"></div>
+        <div class="work-card__body">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
       {% endfor %}
     </div>
   </div>

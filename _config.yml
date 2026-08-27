@@ -12,6 +12,22 @@ hero_bio:
   - "Previously worked on social commerce and the affiliate program at Nykaa."
   - "Created the credit and disbursement experience on the Udaan Capital app at Udaan."
   - "Worked end-to-end on Pickily App, Udaan's quick-commerce grocery app."
+strategy_quote: "Creativity isn't magic but it's maintenance...."
+strategy_quote_subtext: "Sure, sometimes an idea drops into my brain at 2 AM. But most days? I have processes in place that help me tap into my creative space whenever I want."
+strategy_items:
+  - title: "[Strategy initiative title]"
+    description: "[Describe a strategic decision you drove — e.g., planning a design system rollout, defining a product vision, or influencing roadmap priorities.]"
+    cover: /assets/images/placeholder-1.svg
+  - title: "[Cross-functional collaboration]"
+    description: "[Describe how you partnered with PM, Engineering, or Research on a specific initiative, and what came out of it.]"
+    cover: /assets/images/placeholder-2.svg
+  - title: "[Team process or culture]"
+    description: "[Describe a process you introduced — design critiques, review rituals, documentation — and its impact on the team.]"
+    cover: /assets/images/placeholder-3.svg
+  - title: "[Mentorship or leadership]"
+    description: "[Describe how you grew, mentored, or led other designers or a broader design practice.]"
+    cover: /assets/images/placeholder-4.svg
+
 email: "akshayrp09@gmail.com"
 description: >
   Mumbai-based Senior Product Designer with 6 years of experience -
@@ -23,6 +39,8 @@ logo_initials: "AP"
 
 social:
   linkedin: "https://www.linkedin.com/in/akshaypatil09/"   # e.g. https://linkedin.com/in/yourname
+  instagram: "https://www.instagram.com/thepatilakshay"
+  github: "https://github.com/akshayrpatil"
   dribbble: ""
   twitter: ""
   resume_url: "" # link to a hosted PDF, or leave blank to hide
