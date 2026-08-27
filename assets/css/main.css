@@ -231,7 +231,7 @@ h1, h2, h3 {
 
 .hero__grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 2fr 3fr;
   gap: 3rem;
   align-items: center;
 }
@@ -256,7 +256,6 @@ h1, h2, h3 {
 }
 
 .hero__bio {
-  max-width: 46ch;
   margin: 0 0 2rem;
 }
 
