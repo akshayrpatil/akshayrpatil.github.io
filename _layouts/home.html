@@ -8,8 +8,14 @@ layout: default
   </div>
   <div class="wrap hero__grid">
     <div class="hero__intro">
-      <span class="hero__chip">{{ site.role }}</span>
+      <img class="hero__photo" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="{{ site.title }}">
+      <p class="hero__greeting">Hi, I am</p>
       <h1 class="hero__title">{{ site.title }}</h1>
+      <ul class="chip-list hero__chips">
+        {% for chip in site.hero_chips %}
+        <li>{{ chip }}</li>
+        {% endfor %}
+      </ul>
     </div>
     <div class="hero__aside">
       <div class="hero__bio">
