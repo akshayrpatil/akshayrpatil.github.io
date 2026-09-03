@@ -649,7 +649,8 @@ h1, h2, h3 {
 
 /* ---------- Case study ---------- */
 .case-study__header {
-  padding: 4rem 0 2rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
 }
 
 .case-study__back {
@@ -662,7 +663,6 @@ h1, h2, h3 {
 
 .case-study__header h1 {
   font-size: clamp(2rem, 5vw, 3rem);
-  max-width: 22ch;
 }
 
 .case-study__summary {
@@ -712,7 +712,8 @@ h1, h2, h3 {
 
 .case-study__nextprev {
   border-top: 1px solid var(--border);
-  padding: 2rem 0 4rem;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
 }
 
 .case-study__next {
