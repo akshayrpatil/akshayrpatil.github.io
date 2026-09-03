@@ -166,6 +166,42 @@ h1, h2, h3 {
 
 .site-nav__links a:hover { color: var(--text); }
 
+/* Case-study title shown in the collapsed nav pill */
+.site-nav__cs {
+  display: none;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.site-nav__cs-arrow {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  line-height: 1;
+  flex: none;
+  transition: transform 0.15s ease;
+}
+
+.site-nav__cs:hover .site-nav__cs-arrow { transform: translateX(-2px); }
+
+.site-nav__cs-title {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.site-nav--case-study.is-scrolled .site-nav__links { display: none; }
+.site-nav--case-study.is-scrolled .site-nav__cs { display: flex; }
+
+@media (max-width: 480px) {
+  .site-nav__cs { font-size: 0.85rem; }
+}
+
 .site-nav__links a.is-active {
   color: var(--text);
   font-weight: 800;
@@ -648,6 +684,10 @@ h1, h2, h3 {
 }
 
 /* ---------- Case study ---------- */
+.case-study .wrap {
+  max-width: 800px;
+}
+
 .case-study__header {
   padding-top: 4rem;
   padding-bottom: 2rem;

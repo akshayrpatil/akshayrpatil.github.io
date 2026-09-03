@@ -1,5 +1,11 @@
-<header class="site-nav">
+<header class="site-nav{% if page.layout == 'case-study' %} site-nav--case-study{% endif %}">
   <div class="wrap site-nav__inner">
+    {% if page.layout == 'case-study' %}
+    <a class="site-nav__cs" href="{{ '/' | relative_url }}#work">
+      <span class="site-nav__cs-arrow" aria-hidden="true">&larr;</span>
+      <span class="site-nav__cs-title">{{ page.title }}</span>
+    </a>
+    {% endif %}
     <nav class="site-nav__links">
       <a href="{{ '/' | relative_url }}#work" data-section="work">Work</a>
       <a href="{{ '/' | relative_url }}#strategy" data-section="strategy">Collaboration</a>
