@@ -5,7 +5,12 @@ cover: /assets/images/placeholder-1.svg
 role: "Design Owner (PDP)"
 timeline: "Feb 2026 – Present"
 team: "PM, Engineering, Analytics"
-tags: ["Nykaa Beauty", "PDP", "Personalization"]
+metrics:
+  - label: "Add to cart"
+    value: "+18%"
+  - label: "Impact"
+    value: "~₹8 Cr"
+  - "Design initiative"
 order: 0
 ---
 

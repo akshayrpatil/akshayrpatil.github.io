@@ -6,7 +6,10 @@ role: "Design Systems Lead"
 timeline: "2024 · 6 months, ongoing"
 team: "2 designers, 3 engineers"
 tools: "Figma, Tokens Studio, Storybook"
-tags: ["Design systems", "Cross-team"]
+metrics:
+  - label: "Adopted by"
+    value: "4 product teams"
+  - "Design initiative"
 order: 2
 ---
 

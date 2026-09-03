@@ -69,9 +69,15 @@ layout: default
         <div class="work-card__body">
           <h3>{{ item.title }}</h3>
           <p>{{ item.summary }}</p>
-          {% if item.tags %}
-          <ul class="tag-list">
-            {% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}
+          {% if item.metrics %}
+          <ul class="work-card__metrics">
+            {% for metric in item.metrics %}
+            {% if metric.label %}
+            <li><span class="work-card__metric-label">{{ metric.label }}</span> {{ metric.value }}</li>
+            {% else %}
+            <li>{{ metric }}</li>
+            {% endif %}
+            {% endfor %}
           </ul>
           {% endif %}
         </div>

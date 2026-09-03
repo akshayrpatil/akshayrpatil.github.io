@@ -6,7 +6,12 @@ role: "Product Designer"
 timeline: "2023 · 8 weeks"
 team: "1 PM, 1 engineer, 1 designer (me)"
 tools: "Figma, UserTesting"
-tags: ["Activation", "Web app"]
+metrics:
+  - label: "Activation"
+    value: "+26%"
+  - label: "Support calls"
+    value: "-14%"
+  - "Design initiative"
 order: 3
 ---
 

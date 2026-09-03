@@ -6,7 +6,12 @@ role: "Lead Product Designer"
 timeline: "Q1–Q2 2025 · 10 weeks"
 team: "1 PM, 2 engineers, 1 designer (me)"
 tools: "Figma, Maze, Amplitude"
-tags: ["0→1", "Growth", "Mobile"]
+metrics:
+  - label: "Checkout drop-off"
+    value: "-31%"
+  - label: "Impact"
+    value: "~₹12 Cr"
+  - "Design initiative"
 order: 1
 ---
 
