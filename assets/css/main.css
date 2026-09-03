@@ -518,6 +518,10 @@ h1, h2, h3 {
   flex-shrink: 0;
 }
 
+:root[data-theme="dark"] .logos__row img {
+  opacity: 0.9;
+}
+
 @keyframes logos-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
