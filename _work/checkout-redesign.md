@@ -12,7 +12,7 @@ metrics:
   - label: "Impact"
     value: "~₹12 Cr"
   - "Design initiative"
-order: 1
+order: 6
 ---
 
 ## The problem
