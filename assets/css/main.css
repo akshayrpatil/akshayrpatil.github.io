@@ -179,8 +179,9 @@ h1, h2, h3 {
 }
 
 .site-nav__cs-arrow {
+  display: inline-flex;
+  align-items: center;
   color: var(--text-muted);
-  font-size: 1.15rem;
   line-height: 1;
   flex: none;
   transition: transform 0.15s ease;
@@ -519,7 +520,7 @@ h1, h2, h3 {
 }
 
 :root[data-theme="dark"] .logos__row img {
-  opacity: 0.9;
+  opacity: 0.82;
 }
 
 @keyframes logos-scroll {
@@ -635,7 +636,7 @@ h1, h2, h3 {
 }
 
 .work-card__image {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 8 / 5;
   background-size: cover;
   background-position: center;
   background-color: var(--bg-muted);
@@ -739,11 +740,27 @@ h1, h2, h3 {
 }
 
 .case-study__back {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   color: var(--text-muted);
   text-decoration: none;
   margin-bottom: 1.5rem;
   font-size: 0.9rem;
+  transition: color 0.15s ease;
+}
+
+.case-study__back svg {
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.case-study__back:hover {
+  color: var(--text);
+}
+
+.case-study__back:hover svg {
+  transform: translateX(-2px);
 }
 
 .case-study__header h1 {

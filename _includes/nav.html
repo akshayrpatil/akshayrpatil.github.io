@@ -2,7 +2,9 @@
   <div class="wrap site-nav__inner">
     {% if page.layout == 'case-study' %}
     <a class="site-nav__cs" href="{{ '/' | relative_url }}#work">
-      <span class="site-nav__cs-arrow" aria-hidden="true">&larr;</span>
+      <span class="site-nav__cs-arrow" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      </span>
       <span class="site-nav__cs-title">{{ page.title }}</span>
     </a>
     {% endif %}
