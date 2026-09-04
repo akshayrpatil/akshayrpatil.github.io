@@ -1,25 +1,24 @@
 ---
-title: "Pickily Post-Order Redesign"
+title: "Pickily App Post-Order Redesign 2022"
 summary: "Rebuilding order tracking, listing, cancellation and refunds into one coherent journey for 1M+ quick-commerce grocery shoppers."
 cover: /assets/images/pickily.png
 role: "Product Designer"
 timeline: "udaan · 2022"
-team: "1 PM, 1 Engineer, 1 UI Developer"
-tools: "Figma, Shipsy (tracking), Google Maps API"
+team: "1 Product Engineer, 2 Developers"
 metrics:
   - label: "Refund CS calls"
     value: "-73%"
   - label: "Maps API cost"
     value: "-32%"
-  - "Design initiative"
+  - "Product + Design 2022"
 order: 1
 ---
 
-Pickily is udaan's quick-commerce grocery app, live across Bangalore with 1M+ downloads. Its core value proposition is deliberately narrow — quality and price, with delivery under 30 minutes treated as table stakes rather than the differentiator.
+Pickily is udaan's quick-commerce grocery app, live across Bangalore with 1M+ downloads till 2023. Its core value proposition was deliberately narrow - quality and price, with delivery under 30 minutes treated as table stakes rather than the differentiator.
 
-Once checkout ends, a different surface takes over: order tracking, listing, cancellation and refunds. In quick-commerce this "post-order experience" is the only touchpoint left connecting a user to their groceries, and it carries an added wrinkle most tracking patterns don't account for — a single order can bundle an **Instant** delivery and an **Early Morning** delivery together, each on its own timeline.
+Once checkout ends, a different surface takes over: order tracking, listing, cancellation and refunds. In quick-commerce this "post-order experience" is the only touchpoint left connecting a user to their groceries, and it carries an added wrinkle most tracking patterns don't account for, a single order can bundle an **Instant** delivery and an **Early Morning** delivery together, each on its own timeline.
 
-I owned the post-order experience end to end, working with a PM, an engineer and a UI developer to diagnose the gaps, prioritize interventions, design solutions and track impact.
+I owned the post-order experience end to end, working with Shreyash (Product Designer), Wolay (Illustrator), Product engineer and a 2 developers to diagnose the gaps, prioritize interventions, design solutions and track impact.
 
 > **[VIDEO — live order tracking demo: the status bar advancing from "Order is being packed" to "Out for delivery" to "Delivered", map updating in real time]**
 
@@ -29,7 +28,7 @@ I owned the post-order experience end to end, working with a PM, an engineer and
 Product Designer
 
 **Scale**
-1M+ downloads, Bangalore-only
+1M+ downloads, Bangalore, Hyderabad, Mysore (2023)
 
 **Collaboration**
 PM, Engineering, UI Development
@@ -41,7 +40,7 @@ App (Android + iOS)
 
 ## What I owned
 
-Audit · Empathy Mapping · Needs &amp; Business-Objective Prioritisation · Information Architecture · Interaction Design · Usability Testing · Stakeholder Alignment · Impact Tracking
+Audit · Empathy Mapping · Needs &amp; Business-Objective Prioritisation · Information Architecture · Interaction Design · Usability · Stakeholder Alignment · Impact Tracking
 
 ---
 
