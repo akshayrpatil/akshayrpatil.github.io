@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBFBFA;--sf:#F3F3F1;--sf2:#EAEAE7;--ink:#0B0B0C;--ink2:#55555A;--ink3:#8E8E94;--rule:rgba(11,11,12,.15);--rule2:rgba(11,11,12,.07);--sig:#2563EB;--inv:#0B0B0C;--invink:#FBFBFA}
+:root[data-theme="dark"]{--bg:#0B0B0C;--sf:#131315;--sf2:#1C1C1F;--ink:#F4F4F2;--ink2:#A2A2A8;--ink3:#6C6C72;--rule:rgba(244,244,242,.17);--rule2:rgba(244,244,242,.08);--sig:#3B82F6;--inv:#F4F4F2;--invink:#0B0B0C}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Geist,system-ui,-apple-system,sans-serif;transition:background .35s ease,color .35s ease}
+a{color:var(--ink);text-decoration:none}
+a:hover{color:var(--sig)}
+::selection{background:var(--sig);color:#fff}
+[data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+[data-reveal="in"]{opacity:1;transform:none}
+[data-railitem]{transition:color .3s ease,border-color .3s ease}
+h2{scroll-margin-top:90px}
+@media (max-width:980px){[data-rail]{display:none !important}[data-shell]{grid-template-columns:1fr !important}[data-grid2]{grid-template-columns:1fr !important}[data-split]{flex-direction:column !important;gap:28px !important}[data-ring]{display:none !important}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:var(--bg)">
+
+<div data-ring ref="{{ ringRef }}" style="position:fixed;top:0;left:0;width:22px;height:22px;border:1px solid var(--sig);border-radius:50%;pointer-events:none;z-index:9999;mix-blend-mode:difference;transform:translate(-100px,-100px);transition:width .25s ease,height .25s ease,opacity .25s ease"></div>
+
+<header style="position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--rule)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:60px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+    <a href="Portfolio.dc.html#work" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)">← All work</a>
+    <nav style="display:flex;align-items:center;gap:clamp(14px,2.4vw,26px)">
+      <a href="Portfolio.dc.html#work" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)">Work</a>
+      <a href="About.dc.html" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)">About</a>
+      <a href="assets/akshay-patil-resume.pdf" download="" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)">Resume</a>
+      <button onClick="{{ toggleTheme }}" style="width:30px;height:30px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:11px;display:flex;align-items:center;justify-content:center;padding:0" style-hover="border-color:var(--ink)">{{ themeGlyph }}</button>
+    </nav>
+  </div>
+  <div style="height:2px;background:var(--rule2)">
+    <div ref="{{ barRef }}" style="height:2px;width:0%;background:var(--sig);transition:width .12s linear"></div>
+  </div>
+</header>
+
+<div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,40px)">
+  <section style="padding:clamp(40px,6vw,72px) 0 clamp(32px,4vw,48px);border-bottom:1px solid var(--rule)">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sig);margin-bottom:20px">Case study 02 · Shipped 2022</div>
+    <h1 style="margin:0;max-width:1000px;font-size:clamp(30px,5.4vw,62px);line-height:1.02;font-weight:500;letter-spacing:-.03em;text-wrap:balance">Pickily App Post-Order Redesign</h1>
+    <p style="margin:22px 0 0;max-width:720px;font-size:clamp(16px,2vw,21px);line-height:1.5;color:var(--ink2);text-wrap:pretty">Rebuilding order tracking, listing, cancellation and refunds into one coherent journey for 1M+ quick-commerce grocery shoppers.</p>
+    <div style="margin-top:clamp(28px,4vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)">
+      <sc-for list="{{ meta }}" as="m" hint-placeholder-count="4">
+        <div style="background:var(--bg);padding:16px 18px;display:flex;flex-direction:column;gap:7px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3)">{{ m.k }}</span>
+          <span style="font-size:14px;line-height:1.4">{{ m.v }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="margin-top:clamp(24px,3vw,36px)">
+      <dc-import name="Wireframe" label="hero — live order tracking screen" kind="GIF" hint-size="100%,clamp(240px,42vw,520px)" style="height:clamp(240px,42vw,520px)"></dc-import>
+    </div>
+  </section>
+</div>
+
+<div data-shell style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:grid;grid-template-columns:210px 1fr;gap:clamp(28px,5vw,72px);align-items:start">
+
+  <aside data-rail style="position:sticky;top:110px;padding:clamp(36px,5vw,60px) 0">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:16px">Contents</div>
+    <nav style="display:flex;flex-direction:column">
+      <sc-for list="{{ rail }}" as="r" hint-placeholder-count="7">
+        <a href="{{ r.href }}" data-railitem style="display:flex;gap:12px;align-items:baseline;padding:8px 0 8px 12px;border-left:1px solid {{ r.border }};color:{{ r.color }};font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.4">
+          <span style="opacity:.6;flex:0 0 auto">{{ r.no }}</span>
+          <span>{{ r.label }}</span>
+        </a>
+      </sc-for>
+    </nav>
+  </aside>
+
+  <main style="min-width:0;padding:clamp(36px,5vw,60px) 0 clamp(48px,7vw,90px);max-width:820px">
+
+    <section style="margin-bottom:clamp(48px,7vw,84px)">
+      <h2 id="p1" style="margin:0 0 20px;font-size:clamp(22px,3vw,32px);line-height:1.15;font-weight:500;letter-spacing:-.022em">The part of the order nobody designed</h2>
+      <p style="margin:0 0 16px;font-size:16px;line-height:1.72;color:var(--ink2);text-wrap:pretty">Pickily was Udaan's quick-commerce grocery app. Most of the product energy went where you'd expect — catalogue, search, cart, checkout. Everything after "order placed" had been built incrementally, screen by screen, by whoever needed it that quarter.</p>
+      <p style="margin:0 0 16px;font-size:16px;line-height:1.72;color:var(--ink2);text-wrap:pretty">The result was four features that behaved like four different products: a tracking screen, an order list, a cancellation flow, and a refund status page. Each one had its own vocabulary for the same order, its own idea of what a "state" was, and its own dead end when something went wrong.</p>
+      <p style="margin:0;font-size:16px;line-height:1.72;color:var(--ink2);text-wrap:pretty">I worked end-to-end on this — mapping the states with Product and Ops, redesigning the flows, and working with Engineering through a phased rollout.</p>
+      <div style="margin-top:clamp(24px,3vw,32px);border:1px solid var(--rule);padding:clamp(18px,2.4vw,24px)">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);margin-bottom:14px">What I owned</div>
+        <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:2;color:var(--ink2)">State Mapping · CS Ticket Analysis · Ops Interviews · Flow Redesign · UI Design · Prototyping · Eng Handoff · Rollout · Impact Tracking</p>
+      </div>
+    </section>
+
+    <section style="margin-bottom:clamp(48px,7vw,84px)">
+      <h2 id="p2" style="margin:0 0 20px;font-size:clamp(22px,3vw,32px);line-height:1.15;font-weight:500;letter-spacing:-.022em">Reading the support queue instead of the roadmap</h2>
+      <p style="margin:0 0 16px;font-size:16px;line-height:1.72;color:var(--ink2);text-wrap:pretty">The fastest way into this problem wasn't a usability test — it was the customer support queue. I sat with CS tickets and call reasons for the post-order window and sorted them by what the user was actually trying to find out.</p>
+      <p style="margin:0 0 clamp(20px,2.6vw,28px);font-size:16px;line-height:1.72;color:var(--ink2);text-wrap:pretty">Almost none of the calls were complaints about the grocery order. They were requests for information the app already had, but hadn't shown: where the order was, whether the cancellation had worked, and when the money was coming back.</p>
+      <dc-import name="Wireframe" label="CS ticket breakdown — post-order call reasons" kind="DIAGRAM" hint-size="100%,clamp(220px,34vw,380px)" style="height:clamp(220px,34vw,380px)"></dc-import>
+      <div style="margin-top:clamp(20px,2.6vw,28px);display:flex;flex-wrap:wrap;gap:8px">
+        <sc-for list="{{ findings }}" as="f" hint-placeholder-count="6">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.4;padding:8px 12px;background:var(--sf);border:1px solid var(--rule2);color:var(--ink2)">{{ f }}</span>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="margin-bottom:clamp(48px,7vw,84px)">
+      <h2 id="p3" style="margin:0 0 20px;font-size:clamp(22px,3vw,32px);line-height:1.15;font-weight:500;letter-spacing:-.022em">Key problems identified</h2>
+      <div style="display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule)">
+        <sc-for list="{{ problems }}" as="pr" hint-placeholder-count="4">
+          <div data-reveal style="background:var(--bg);padding:clamp(18px,2.4vw,26px);display:flex;flex-direction:column;gap:10px">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3)">{{ pr.no }}</span>
+            <h3 style="margin:0;font-size:clamp(17px,2.1vw,21px);line-height:1.25;font-weight:500;letter-spacing:-.015em;text-wrap:pretty">{{ pr.title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.68;color:var(--ink2);text-wrap:pretty">{{ pr.body }}</p>
+            <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:11.5px;line-height:1.6;color:var(--sig)">Repercussion: {{ pr.effect }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="margin-bottom:clamp(48px,7vw,84px)">
+      <h2 id="p4" style="margin:0 0 20px;font-size:clamp(22px,3vw,32px);line-height:1.15;font-weight:500;letter-spacing:-.022em">One order, one state machine</h2>
+      <p style="margin:0 0 clamp(24px,3vw,32px);font-size:16px;line-height:1.72;color:var(--ink2);text-wrap:pretty">The redesign started as a state map, not a screen. If every surface could agree on what an order was doing right now, the screens would mostly write themselves. Three principles came out of that.</p>
+      <div style="display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:clamp(24px,3vw,32px)">
+        <sc-for list="{{ bets }}" as="b" hint-placeholder-count="3">
+          <div data-reveal style="background:var(--bg);padding:clamp(18px,2.4vw,26px);display:flex;gap:clamp(14px,2vw,22px);align-items:flex-start">
+            <span style="flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--sig);padding-top:3px">{{ b.no }}</span>
+            <div style="flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:8px">
+              <h3 style="margin:0;font-size:clamp(16px,2vw,19px);line-height:1.3;font-weight:500;letter-spacing:-.012em;text-wrap:pretty">{{ b.title }}</h3>
+              <p style="margin:0;font-size:15px;line-height:1.68;color:var(--ink2);text-wrap:pretty">{{ b.body }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <dc-import name="Wireframe" label="order state map — placed → delivered / cancelled / refunded" kind="DIAGRAM" hint-size="100%,clamp(220px,34vw,400px)" style="height:clamp(220px,34vw,400px)"></dc-import>
+    </section>
+
+    <section style="margin-bottom:clamp(48px,7vw,84px)">
+      <h2 id="p5" style="margin:0 0 20px;font-size:clamp(22px,3vw,32px);line-height:1.15;font-weight:500;letter-spacing:-.022em">What shipped</h2>
+      <div style="display:flex;flex-direction:column;gap:clamp(28px,4vw,44px)">
+        <sc-for list="{{ shipped }}" as="s" hint-placeholder-count="4">
+          <div data-reveal style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:12px">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sig)">{{ s.no }}</span>
+              <h3 style="margin:0;font-size:clamp(18px,2.3vw,24px);line-height:1.2;font-weight:500;letter-spacing:-.018em;text-wrap:pretty">{{ s.title }}</h3>
+            </div>
+            <p style="margin:0;font-size:15.5px;line-height:1.7;color:var(--ink2);text-wrap:pretty">{{ s.body }}</p>
+            <dc-import name="Wireframe" label="{{ s.slot }}" kind="IMG" hint-size="100%,clamp(200px,30vw,340px)" style="height:clamp(200px,30vw,340px)"></dc-import>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="margin-bottom:clamp(48px,7vw,84px)">
+      <h2 id="p6" style="margin:0 0 20px;font-size:clamp(22px,3vw,32px);line-height:1.15;font-weight:500;letter-spacing:-.022em">Impact</h2>
+      <p style="margin:0 0 clamp(24px,3vw,32px);font-size:16px;line-height:1.72;color:var(--ink2);text-wrap:pretty">The clearest signal was the support queue going quiet. The second — the one I didn't expect to be arguing about — was infrastructure cost.</p>
+      <div data-grid2 style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)">
+        <sc-for list="{{ impact }}" as="i" hint-placeholder-count="4">
+          <div style="background:var(--bg);padding:clamp(20px,2.6vw,26px);display:flex;flex-direction:column;gap:8px">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:clamp(24px,3.4vw,34px);font-weight:500;letter-spacing:-.02em;color:var(--sig)">{{ i.v }}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);line-height:1.5">{{ i.k }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin:clamp(24px,3vw,32px) 0 0;font-size:16px;line-height:1.72;color:var(--ink2);text-wrap:pretty">The maps saving came from a design decision, not an engineering one. The old tracking screen kept a live map polling continuously for the entire order lifetime, including the long stretch where the order was still being packed and there was nothing to show. Replacing that stretch with a status timeline — and only mounting the live map once a rider was actually assigned — cut the API calls without taking anything away from the user.</p>
+    </section>
+
+    <section style="margin-bottom:clamp(40px,6vw,64px)">
+      <h2 id="p7" style="margin:0 0 20px;font-size:clamp(22px,3vw,32px);line-height:1.15;font-weight:500;letter-spacing:-.022em">What I learned</h2>
+      <p style="margin:0 0 16px;font-size:16px;line-height:1.72;color:var(--ink2);text-wrap:pretty">Post-order is where trust is either earned or lost, and it's almost always the least-designed part of a commerce app. Nobody demos it. Everybody calls support about it.</p>
+      <p style="margin:0 0 16px;font-size:16px;line-height:1.72;color:var(--ink2);text-wrap:pretty">I also learned that "the user doesn't know what's happening" is usually not a content problem — it's a states problem. Once Product, Ops, Engineering and I were describing an order with the same words, the copy stopped being hard to write.</p>
+      <p style="margin:0;font-size:16px;line-height:1.72;color:var(--ink2);text-wrap:pretty">And a live map is a great way to say "we're on it" and an expensive way to say nothing. Knowing which moment needs which is the actual design work.</p>
+      <p style="margin:clamp(28px,4vw,36px) 0 0;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink3);font-style:italic">Pickily · Udaan · Product Designer · 2022</p>
+    </section>
+
+    <a href="Nykaa-PDP.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid var(--rule);padding:clamp(20px,3vw,28px)" style-hover="border-color:var(--ink)">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3)">Previous case study</span>
+        <span style="font-size:clamp(17px,2.2vw,22px);font-weight:500;letter-spacing:-.015em">Nykaa PDP — Differentiated Category Experience</span>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--ink3)">←</span>
+    </a>
+
+  </main>
+</div>
+
+<footer style="border-top:1px solid var(--rule)">
+  <div style="max-width:1320px;margin:0 auto;padding:22px clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--ink3)">© 2026 Akshay R. Patil · Hosted on GitHub Pages</span>
+    <div style="display:flex;gap:18px">
+      <a href="https://www.linkedin.com/in/akshaypatil09/" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)">LinkedIn</a>
+      <a href="https://github.com/akshayrpatil" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)">GitHub</a>
+      <a href="mailto:akshayrp09@gmail.com" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)">Email</a>
+    </div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const RAIL = [
+  { no: "01", label: "Context", href: "#p1" },
+  { no: "02", label: "The support queue", href: "#p2" },
+  { no: "03", label: "Problems", href: "#p3" },
+  { no: "04", label: "One state machine", href: "#p4" },
+  { no: "05", label: "What shipped", href: "#p5" },
+  { no: "06", label: "Impact", href: "#p6" },
+  { no: "07", label: "What I learned", href: "#p7" }
+];
+
+class Component extends DCLogic {
+  state = { theme: "light", active: 0 };
+
+  componentDidMount() {
+    const saved = localStorage.getItem("arp-theme");
+    const theme = saved === "dark" || saved === "light" ? saved : "light";
+    document.documentElement.dataset.theme = theme;
+    this.setState({ theme });
+
+    this._io = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) { e.target.dataset.reveal = "in"; this._io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: "0px 0px -8% 0px" });
+    setTimeout(() => document.querySelectorAll("[data-reveal]").forEach((n) => this._io.observe(n)), 60);
+
+    this._onScroll = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const pct = max > 0 ? Math.min(100, (h.scrollTop / max) * 100) : 0;
+      if (this.barRef) this.barRef.style.width = pct + "%";
+      let active = 0;
+      RAIL.forEach((r, i) => {
+        const el = document.querySelector(r.href);
+        if (el && el.getBoundingClientRect().top <= 160) active = i;
+      });
+      if (active !== this.state.active) this.setState({ active });
+    };
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+    this._onScroll();
+
+    if (!matchMedia("(hover: hover)").matches) return;
+    const ring = this.ringRef;
+    if (!ring) return;
+    let x = -100, y = -100, tx = -100, ty = -100;
+    const move = (e) => {
+      tx = e.clientX; ty = e.clientY;
+      const over = e.target.closest && e.target.closest("a,button");
+      const s = over ? 44 : 20;
+      ring.style.width = s + "px";
+      ring.style.height = s + "px";
+      ring.style.opacity = over ? "1" : ".45";
+    };
+    window.addEventListener("mousemove", move);
+    const loop = () => {
+      x += (tx - x) * 0.18; y += (ty - y) * 0.18;
+      const r = ring.offsetWidth / 2;
+      ring.style.transform = "translate(" + (x - r) + "px," + (y - r) + "px)";
+      this._raf = requestAnimationFrame(loop);
+    };
+    loop();
+    this._move = move;
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._move) window.removeEventListener("mousemove", this._move);
+    if (this._onScroll) window.removeEventListener("scroll", this._onScroll);
+  }
+
+  toggle = () => {
+    const next = this.state.theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem("arp-theme", next);
+    this.setState({ theme: next });
+  };
+
+  renderVals() {
+    return {
+      ringRef: (n) => { this.ringRef = n; },
+      barRef: (n) => { this.barRef = n; },
+      toggleTheme: this.toggle,
+      themeGlyph: this.state.theme === "dark" ? "☀" : "☾",
+      rail: RAIL.map((r, i) => ({
+        ...r,
+        color: i === this.state.active ? "var(--ink)" : "var(--ink3)",
+        border: i === this.state.active ? "var(--sig)" : "var(--rule2)"
+      })),
+      meta: [
+        { k: "Role", v: "Product + Design, end to end" },
+        { k: "Timeline", v: "2022" },
+        { k: "Team", v: "PM, Engineering, Ops, CS" },
+        { k: "Platform", v: "Android + iOS" },
+        { k: "Scale", v: "1M+ grocery shoppers" }
+      ],
+      findings: [
+        "\u201cWhere is my order?\u201d",
+        "\u201cDid my cancellation go through?\u201d",
+        "\u201cWhen will I get my refund?\u201d",
+        "Order list showed no live status",
+        "Refund had no visible timeline",
+        "Cancellation ended without confirmation"
+      ],
+      problems: [
+        { no: "Problem 1", title: "Four surfaces, four vocabularies", body: "Tracking, order list, cancellation and refund each described the same order differently. A user who moved between them couldn't tell whether they were seeing new information or the same information renamed.", effect: "users stop trusting any single screen and call support to confirm." },
+        { no: "Problem 2", title: "The order list was a receipt, not a status", body: "The list showed what had been bought and how much it cost, but not what was happening. Every check on a live order meant opening the order to find out.", effect: "extra taps on the single most repeated post-order action." },
+        { no: "Problem 3", title: "Cancellation ended in silence", body: "The flow submitted the request and returned the user to a screen that looked exactly like before. There was no acknowledgement, no expected timeline, and no statement of what happened to the money.", effect: "the highest-anxiety action in the app had the least feedback." },
+        { no: "Problem 4", title: "Refunds were invisible until they arrived", body: "Once initiated, a refund had no status, no stage, and no estimate. The app knew where it was in the pipeline and showed none of it.", effect: "the single largest driver of post-order support contacts." }
+      ],
+      bets: [
+        { no: "01", title: "One order state, spoken the same way everywhere.", body: "A single set of states with a single label and colour for each, used identically on the list, the tracking screen, and every notification." },
+        { no: "02", title: "Never end an action in silence.", body: "Cancellations and refunds both get an explicit acknowledgement, a stage, and a plain-language estimate of when the money returns." },
+        { no: "03", title: "Show live detail only when there is live detail.", body: "A status timeline while the order is being packed; the map once a rider actually exists. The interface matches the amount of real information available." }
+      ],
+      shipped: [
+        { no: "01", title: "Tracking as a timeline, map on demand", body: "The tracking screen leads with a vertical timeline of the order's real stages and mounts the live map only once a rider is assigned. Same information, honestly staged — and dramatically cheaper to run.", slot: "tracking screen — timeline + rider-assigned map" },
+        { no: "02", title: "Status-first order list", body: "Each row leads with the state chip and the next thing that will happen, with price and items secondary. A live order is legible from the list without opening it.", slot: "order list — status-first rows" },
+        { no: "03", title: "Cancellation with a stated outcome", body: "The flow confirms the cancellation, names the refund amount and method, and hands the user straight into the refund timeline rather than dropping them back into the list.", slot: "cancellation flow — request \u2192 confirmation" },
+        { no: "04", title: "Refunds with a visible pipeline", body: "Refund status became a first-class screen: initiated, processed by us, processed by the bank, with a plain estimate at each stage and a support hand-off only if a stage overruns.", slot: "refund status — staged pipeline" }
+      ],
+      impact: [
+        { v: "-73%", k: "Refund-related CS calls" },
+        { v: "-32%", k: "Maps API cost" },
+        { v: "1M+", k: "Shoppers on the new flow" },
+        { v: "4 → 1", k: "Post-order surfaces unified" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

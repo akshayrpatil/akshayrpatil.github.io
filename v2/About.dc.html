@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBFBFA;--sf:#F3F3F1;--sf2:#EAEAE7;--ink:#0B0B0C;--ink2:#55555A;--ink3:#8E8E94;--rule:rgba(11,11,12,.15);--rule2:rgba(11,11,12,.07);--sig:#2563EB;--inv:#0B0B0C;--invink:#FBFBFA}
+:root[data-theme="dark"]{--bg:#0B0B0C;--sf:#131315;--sf2:#1C1C1F;--ink:#F4F4F2;--ink2:#A2A2A8;--ink3:#6C6C72;--rule:rgba(244,244,242,.17);--rule2:rgba(244,244,242,.08);--sig:#3B82F6;--inv:#F4F4F2;--invink:#0B0B0C}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Geist,system-ui,-apple-system,sans-serif;transition:background .35s ease,color .35s ease}
+a{color:var(--ink);text-decoration:none}
+a:hover{color:var(--sig)}
+::selection{background:var(--sig);color:#fff}
+[data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+[data-reveal="in"]{opacity:1;transform:none}
+[data-row]{transition:background .3s ease,padding-left .3s ease}
+[data-row]:hover{background:var(--sf)}
+@media (max-width:860px){[data-grid2]{grid-template-columns:1fr !important}[data-split]{flex-direction:column !important;gap:32px !important}[data-ring]{display:none !important}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:var(--bg)">
+
+<div data-ring ref="{{ ringRef }}" style="position:fixed;top:0;left:0;width:24px;height:24px;border:1px solid var(--sig);border-radius:50%;pointer-events:none;z-index:9999;mix-blend-mode:difference;transform:translate(-100px,-100px);transition:width .25s ease,height .25s ease,opacity .25s ease"></div>
+
+<header style="position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--rule)">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:60px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+    <a href="Portfolio.dc.html" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500">Akshay R. Patil</a>
+    <nav style="display:flex;align-items:center;gap:clamp(14px,2.4vw,26px)">
+      <a href="Portfolio.dc.html#work" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)">Work</a>
+      <a href="Portfolio.dc.html#strategy" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)">Collab</a>
+      <a href="About.dc.html" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sig)">About</a>
+      <a href="assets/akshay-patil-resume.pdf" download="" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)">Resume</a>
+      <button onClick="{{ toggleTheme }}" style="width:30px;height:30px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:11px;display:flex;align-items:center;justify-content:center;padding:0" style-hover="border-color:var(--ink)">{{ themeGlyph }}</button>
+    </nav>
+  </div>
+</header>
+
+<main style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px)">
+
+  <section style="padding:clamp(48px,7vw,90px) 0 clamp(40px,6vw,64px);border-bottom:1px solid var(--rule)">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:clamp(22px,4vw,36px)">About</div>
+    <div data-split style="display:flex;gap:clamp(32px,6vw,72px);align-items:flex-start">
+      <div style="flex:1 1 auto;min-width:0;max-width:720px;display:flex;flex-direction:column;gap:22px">
+        <h1 style="margin:0;font-size:clamp(28px,4.6vw,52px);line-height:1.06;font-weight:500;letter-spacing:-.028em;text-wrap:balance">Designing for the messy middle.</h1>
+        <p style="margin:0;font-size:clamp(16px,2vw,20px);line-height:1.5;color:var(--ink);text-wrap:pretty">I'm a Senior Product Designer with six years across consumer and B2B products, and I've made peace with the fact that the interesting part is never the pretty part. It's the stretch where nobody agrees on the problem yet.</p>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:var(--ink2);text-wrap:pretty">Right now I own the pre-purchase funnel and beauty tech innovation at Nykaa Beauty — the product page, the moment where browsing either becomes a confident purchase or quietly leaks away. Before that I worked on social commerce and the affiliate program at Nykaa, built the credit and disbursement experience for the Udaan Capital app, and worked end-to-end on Pickily, Udaan's quick-commerce grocery app.</p>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:var(--ink2);text-wrap:pretty">I like sitting close to PMs and engineers from discovery to ship. Half of my job turns out to be making a decision legible to other people — a data cut, a research quote, a fold-by-fold teardown — and I've come to enjoy that as much as the craft itself. I care about the system behind a product as much as the pixels on the screen.</p>
+      </div>
+      <div style="flex:0 0 auto;width:min(320px,100%);display:flex;flex-direction:column;gap:18px">
+        <img src="assets/images/profile.jpg" alt="Akshay R. Patil" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border:1px solid var(--rule);display:block;background:var(--sf) repeating-linear-gradient(135deg,var(--rule2) 0 1px,transparent 1px 9px);filter:grayscale(1);transition:filter .4s ease" style-hover="filter:grayscale(0)" />
+        <div style="border-top:1px solid var(--rule)">
+          <sc-for list="{{ spec }}" as="row" hint-placeholder-count="4">
+            <div style="display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--rule2);font-family:'JetBrains Mono',monospace;font-size:11px">
+              <span style="color:var(--ink3);letter-spacing:.1em;text-transform:uppercase">{{ row.k }}</span>
+              <span style="text-align:right">{{ row.v }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(48px,7vw,90px) 0;border-bottom:1px solid var(--rule)">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:16px">Experience</div>
+    <h2 style="margin:0 0 clamp(24px,4vw,40px);font-size:clamp(24px,3.4vw,36px);line-height:1.1;font-weight:500;letter-spacing:-.022em">Where I've worked</h2>
+    <div style="border-top:1px solid var(--rule)">
+      <sc-for list="{{ roles }}" as="r" hint-placeholder-count="5">
+        <div data-row data-reveal style="display:grid;grid-template-columns:1fr;gap:6px;padding:clamp(18px,2.4vw,24px) clamp(10px,1.6vw,16px);border-bottom:1px solid var(--rule)">
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px">
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:12px">
+              <span style="font-size:clamp(17px,2.2vw,22px);font-weight:500;letter-spacing:-.015em">{{ r.company }}</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink2)">{{ r.title }}</span>
+            </div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);white-space:nowrap">{{ r.when }}</span>
+          </div>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:var(--ink2);max-width:720px;text-wrap:pretty">{{ r.note }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding:clamp(48px,7vw,90px) 0;border-bottom:1px solid var(--rule)">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:16px">Beyond the day job</div>
+    <h2 style="margin:0 0 clamp(24px,4vw,40px);font-size:clamp(24px,3.4vw,36px);line-height:1.1;font-weight:500;letter-spacing:-.022em">Speaking, mentorship &amp; side projects</h2>
+    <div data-grid2 style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)">
+      <sc-for list="{{ beyond }}" as="b" hint-placeholder-count="4">
+        <div data-reveal style="background:var(--bg);padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;gap:12px;min-height:200px">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--sig)">{{ b.tag }}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink3)">{{ b.no }}</span>
+          </div>
+          <h3 style="margin:0;font-size:18px;line-height:1.25;font-weight:500;letter-spacing:-.01em;text-wrap:pretty">{{ b.title }}</h3>
+          <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.7;color:var(--ink3);text-wrap:pretty">{{ b.prompt }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding:clamp(48px,7vw,86px) 0">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:20px">Contact</div>
+    <p style="margin:0 0 26px;font-size:clamp(15px,1.8vw,18px);line-height:1.5;color:var(--ink2);max-width:560px;text-wrap:pretty">Currently open to Sr. / Staff product design roles, and always happy to talk shop about funnels, design systems, or beauty tech.</p>
+    <a href="mailto:akshayrp09@gmail.com" style="font-family:'JetBrains Mono',monospace;font-size:clamp(18px,3.6vw,38px);letter-spacing:-.02em;display:inline-block;border-bottom:1px solid var(--rule);padding-bottom:6px">akshayrp09@gmail.com</a>
+    <div style="margin-top:32px">
+      <a href="Portfolio.dc.html#work" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:13px 22px;border:1px solid var(--rule);display:inline-block" style-hover="border-color:var(--ink)">← See the work</a>
+    </div>
+  </section>
+</main>
+
+<footer style="border-top:1px solid var(--rule)">
+  <div style="max-width:1180px;margin:0 auto;padding:22px clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--ink3)">© 2026 Akshay R. Patil · Hosted on GitHub Pages</span>
+    <div style="display:flex;gap:18px">
+      <a href="https://www.instagram.com/thepatilakshay" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)">Instagram</a>
+      <a href="https://www.linkedin.com/in/akshaypatil09/" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)">LinkedIn</a>
+      <a href="https://github.com/akshayrpatil" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)">GitHub</a>
+      <a href="mailto:akshayrp09@gmail.com" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)">Email</a>
+    </div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { theme: "light" };
+
+  componentDidMount() {
+    const saved = localStorage.getItem("arp-theme");
+    const theme = saved === "dark" || saved === "light" ? saved : "light";
+    document.documentElement.dataset.theme = theme;
+    this.setState({ theme });
+
+    this._io = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) { e.target.dataset.reveal = "in"; this._io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    setTimeout(() => document.querySelectorAll("[data-reveal]").forEach((n) => this._io.observe(n)), 60);
+
+    if (!matchMedia("(hover: hover)").matches) return;
+    const ring = this.ringRef;
+    if (!ring) return;
+    let x = -100, y = -100, tx = -100, ty = -100;
+    const move = (e) => {
+      tx = e.clientX; ty = e.clientY;
+      const over = e.target.closest && e.target.closest("a,button,[data-row]");
+      const s = over ? 48 : 22;
+      ring.style.width = s + "px";
+      ring.style.height = s + "px";
+      ring.style.opacity = over ? "1" : ".5";
+    };
+    window.addEventListener("mousemove", move);
+    const loop = () => {
+      x += (tx - x) * 0.18; y += (ty - y) * 0.18;
+      const r = ring.offsetWidth / 2;
+      ring.style.transform = "translate(" + (x - r) + "px," + (y - r) + "px)";
+      this._raf = requestAnimationFrame(loop);
+    };
+    loop();
+    this._move = move;
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._move) window.removeEventListener("mousemove", this._move);
+  }
+
+  toggle = () => {
+    const next = this.state.theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem("arp-theme", next);
+    this.setState({ theme: next });
+  };
+
+  renderVals() {
+    return {
+      ringRef: (n) => { this.ringRef = n; },
+      toggleTheme: this.toggle,
+      themeGlyph: this.state.theme === "dark" ? "☀" : "☾",
+      spec: [
+        { k: "Role", v: "Sr. Product Designer" },
+        { k: "Exp", v: "6+ years" },
+        { k: "Edu", v: "IIT Bombay" },
+        { k: "Base", v: "Mumbai, India" }
+      ],
+      roles: [
+        { company: "Nykaa Beauty", title: "Sr. Product Designer", when: "Feb 2023 — Present", note: "Own the pre-purchase funnel and beauty tech innovation. Previously social commerce and the affiliate program." },
+        { company: "Udaan Capital", title: "Product Designer", when: "2021 — 2023", note: "Created the credit and disbursement experience on the Udaan Capital app." },
+        { company: "Pickily · Udaan", title: "Product Designer", when: "2021 — 2022", note: "Worked end-to-end on Pickily, Udaan's quick-commerce grocery app, from 0→1 through post-order." },
+        { company: "BizNumbers", title: "Product Designer", when: "2020 — 2021", note: "B2B fintech surfaces — reconciliation, dashboards, and reporting flows." },
+        { company: "ignio · TCS", title: "UX Designer", when: "2019 — 2020", note: "Enterprise AIOps product. Where I learned to design for density and for people who read screens all day." }
+      ],
+      beyond: [
+        { no: "01", tag: "Speaking", title: "[Talk or panel title]", prompt: "[Where you spoke, to whom, and the one idea you wanted the room to leave with.]" },
+        { no: "02", tag: "Mentorship", title: "[Mentorship programme or cohort]", prompt: "[Who you mentored, over what period, and how you structured it — portfolio reviews, weekly critiques, career coaching.]" },
+        { no: "03", tag: "Side project", title: "[Side project name]", prompt: "[What you built outside work, why you started it, and what it taught you that the day job wouldn't.]" },
+        { no: "04", tag: "Writing", title: "[Article or series]", prompt: "[Something you've written about design practice, plus where it lives.]" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

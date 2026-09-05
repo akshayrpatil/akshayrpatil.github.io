@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBFBFA;--sf:#F3F3F1;--sf2:#EAEAE7;--ink:#0B0B0C;--ink2:#55555A;--ink3:#8E8E94;--rule:rgba(11,11,12,.15);--rule2:rgba(11,11,12,.07);--sig:#2563EB;--inv:#0B0B0C;--invink:#FBFBFA}
+:root[data-theme="dark"]{--bg:#0B0B0C;--sf:#131315;--sf2:#1C1C1F;--ink:#F4F4F2;--ink2:#A2A2A8;--ink3:#6C6C72;--rule:rgba(244,244,242,.17);--rule2:rgba(244,244,242,.08);--sig:#3B82F6;--inv:#F4F4F2;--invink:#0B0B0C}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Geist,system-ui,-apple-system,sans-serif;transition:background .35s ease,color .35s ease}
+a{color:var(--ink);text-decoration:none}
+a:hover{color:var(--sig)}
+::selection{background:var(--sig);color:#fff}
+[data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+[data-reveal="in"]{opacity:1;transform:none}
+[data-card]{transition:border-color .35s ease,background .35s ease}
+[data-card]:hover{border-color:var(--ink3)}
+[data-peek]{opacity:.42;transform:translateY(6px);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)}
+[data-card]:hover [data-peek]{opacity:1;transform:translateY(0)}
+[data-arrow]{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+[data-card]:hover [data-arrow]{transform:translate(5px,-5px)}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+[data-logo]{filter:grayscale(1);opacity:.62;transition:opacity .3s ease,filter .3s ease}
+[data-logo]:hover{opacity:1;filter:grayscale(0)}
+:root[data-theme="dark"] [data-logo]{filter:grayscale(1) invert(1) brightness(1.7);opacity:.6}
+:root[data-theme="dark"] [data-logo]:hover{opacity:.95}
+@media (max-width:860px){[data-grid2]{grid-template-columns:1fr !important}[data-hero-row]{flex-direction:column !important;gap:36px !important}[data-ring]{display:none !important}}
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="min-height:100vh;background:var(--bg)">
+
+<div data-ring ref="{{ ringRef }}" style="position:fixed;top:0;left:0;width:28px;height:28px;border:1px solid var(--sig);border-radius:50%;pointer-events:none;z-index:9999;mix-blend-mode:difference;transform:translate(-100px,-100px);transition:width .25s ease,height .25s ease,opacity .25s ease"></div>
+
+<header style="position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--rule)">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:60px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+    <a href="Portfolio.dc.html" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500">Akshay R. Patil</a>
+    <nav style="display:flex;align-items:center;gap:clamp(14px,2.4vw,26px)">
+      <a href="#work" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)">Work</a>
+      <a href="#strategy" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)">Collab</a>
+      <a href="About.dc.html" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)">About</a>
+      <a href="assets/akshay-patil-resume.pdf" download="" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)">Resume</a>
+      <button onClick="{{ toggleTheme }}" style="width:30px;height:30px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:11px;display:flex;align-items:center;justify-content:center;padding:0" style-hover="border-color:var(--ink)">{{ themeGlyph }}</button>
+    </nav>
+  </div>
+</header>
+
+<main style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px)">
+
+  <section style="padding:clamp(56px,9vw,110px) 0 clamp(40px,6vw,72px);border-bottom:1px solid var(--rule)">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:clamp(24px,4vw,40px)">01 — Index</div>
+    <div data-hero-row style="display:flex;align-items:flex-start;justify-content:space-between;gap:48px">
+      <div style="flex:1 1 auto;min-width:0">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink3);margin-bottom:14px">Hi, I am</div>
+        <h1 style="margin:0;font-size:clamp(38px,7.4vw,86px);line-height:.96;font-weight:500;letter-spacing:-.03em;text-wrap:balance">Akshay R. Patil</h1>
+        <div style="margin-top:22px;display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:clamp(12px,1.5vw,15px);color:var(--ink2);min-height:22px">
+          <span style="color:var(--sig)">&gt;</span>
+          <span>{{ typed }}</span>
+          <span style="display:inline-block;width:8px;height:16px;background:var(--sig);animation:blink 1s step-end infinite"></span>
+        </div>
+      </div>
+      <div style="flex:0 0 auto;width:min(300px,100%);display:flex;flex-direction:column;gap:18px">
+        <img src="assets/images/profile.jpg" alt="Akshay R. Patil" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border:1px solid var(--rule);display:block;background:var(--sf) repeating-linear-gradient(135deg,var(--rule2) 0 1px,transparent 1px 9px);filter:grayscale(1);transition:filter .4s ease" style-hover="filter:grayscale(0)" />
+        <div style="border-top:1px solid var(--rule)">
+        <sc-for list="{{ spec }}" as="row" hint-placeholder-count="4">
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--rule2);font-family:'JetBrains Mono',monospace;font-size:11px">
+            <span style="color:var(--ink3);letter-spacing:.1em;text-transform:uppercase">{{ row.k }}</span>
+            <span style="color:var(--ink);text-align:right">{{ row.v }}</span>
+          </div>
+        </sc-for>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:clamp(32px,5vw,52px);display:flex;flex-wrap:wrap;gap:10px">
+      <a href="assets/akshay-patil-resume.pdf" download="" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:13px 22px;background:var(--inv);color:var(--invink);display:inline-block" style-hover="opacity:.85;color:var(--invink)">Download Resume ↓</a>
+      <a href="https://www.linkedin.com/in/akshaypatil09/" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:13px 22px;border:1px solid var(--rule);display:inline-block" style-hover="border-color:var(--ink)">LinkedIn ↗</a>
+    </div>
+  </section>
+
+  <section style="padding:26px 0;border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;align-items:center;gap:clamp(18px,3vw,40px)">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)">Worked with</span>
+    <img data-logo src="assets/images/logos/nykaa.png" alt="Nykaa" style="height:clamp(18px,2.4vw,26px);width:auto;max-width:120px;object-fit:contain;display:block;background:var(--sf) repeating-linear-gradient(135deg,var(--rule2) 0 1px,transparent 1px 9px)" />
+    <img data-logo src="assets/images/logos/udaan-capital.png" alt="Udaan Capital" style="height:clamp(18px,2.4vw,26px);width:auto;max-width:120px;object-fit:contain;display:block;background:var(--sf) repeating-linear-gradient(135deg,var(--rule2) 0 1px,transparent 1px 9px)" />
+    <img data-logo src="assets/images/logos/pickily.png" alt="Pickily" style="height:clamp(18px,2.4vw,26px);width:auto;max-width:120px;object-fit:contain;display:block;background:var(--sf) repeating-linear-gradient(135deg,var(--rule2) 0 1px,transparent 1px 9px)" />
+    <img data-logo src="assets/images/logos/udaan.png" alt="Udaan" style="height:clamp(18px,2.4vw,26px);width:auto;max-width:120px;object-fit:contain;display:block;background:var(--sf) repeating-linear-gradient(135deg,var(--rule2) 0 1px,transparent 1px 9px)" />
+    <img data-logo src="assets/images/logos/biznumbers.png" alt="BizNumbers" style="height:clamp(18px,2.4vw,26px);width:auto;max-width:120px;object-fit:contain;display:block;background:var(--sf) repeating-linear-gradient(135deg,var(--rule2) 0 1px,transparent 1px 9px)" />
+    <img data-logo src="assets/images/logos/ignio-tcs.png" alt="ignio, TCS" style="height:clamp(18px,2.4vw,26px);width:auto;max-width:120px;object-fit:contain;display:block;background:var(--sf) repeating-linear-gradient(135deg,var(--rule2) 0 1px,transparent 1px 9px)" />
+  </section>
+
+  <section id="work" style="padding:clamp(56px,8vw,100px) 0;border-bottom:1px solid var(--rule)">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:clamp(28px,4vw,44px)">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:16px">02 — Work</div>
+        <h2 style="margin:0;font-size:clamp(26px,4vw,44px);line-height:1.05;font-weight:500;letter-spacing:-.02em">Selected <em style="font-style:italic;font-weight:300">work</em> over the years.</h2>
+      </div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);white-space:nowrap">{{ workCount }}</span>
+    </div>
+    <div data-grid2 style="display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2vw,24px)">
+      <sc-for list="{{ work }}" as="w" hint-placeholder-count="4">
+        <a href="{{ w.href }}" data-card data-reveal data-magnet style="border:1px solid var(--rule);background:var(--bg);padding:clamp(18px,2.4vw,26px);display:flex;flex-direction:column;gap:18px;min-height:400px">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3)">{{ w.no }}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:4px 8px;border:1px solid var(--rule);color:var(--ink3)">{{ w.status }}</span>
+          </div>
+          <div data-peek style="flex:0 0 auto;height:200px;overflow:hidden">
+            <sc-if value="{{ w.hasImg }}" hint-placeholder-val="{{ true }}">
+              <img src="assets/images/pdpthumbnail.gif" alt="Nykaa PDP — differentiated category experience" style="width:100%;height:200px;object-fit:cover;object-position:center top;border:1px solid var(--rule);display:block;background:var(--sf) repeating-linear-gradient(135deg,var(--rule2) 0 1px,transparent 1px 9px)" />
+            </sc-if>
+            <sc-if value="{{ w.noImg }}" hint-placeholder-val="{{ false }}">
+              <dc-import name="Wireframe" label="{{ w.slot }}" kind="{{ w.slotKind }}" hint-size="100%,200px" style="height:200px"></dc-import>
+            </sc-if>
+          </div>
+          <div style="flex:1 1 auto;display:flex;flex-direction:column;gap:10px">
+            <h3 style="margin:0;font-size:clamp(18px,2.2vw,23px);line-height:1.2;font-weight:500;letter-spacing:-.015em;text-wrap:pretty">{{ w.title }}</h3>
+            <p style="margin:0;font-size:14px;line-height:1.55;color:var(--ink2);text-wrap:pretty">{{ w.desc }}</p>
+          </div>
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-top:1px solid var(--rule2);padding-top:16px">
+            <div style="display:flex;flex-wrap:wrap;gap:18px">
+              <sc-for list="{{ w.metrics }}" as="m" hint-placeholder-count="2">
+                <div style="display:flex;flex-direction:column;gap:4px">
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:500;color:var(--sig)">{{ m.v }}</span>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)">{{ m.k }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <span data-arrow style="font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--ink3);display:inline-block">↗</span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="strategy" style="padding:clamp(56px,8vw,100px) 0;border-bottom:1px solid var(--rule)">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:16px">03 — Collaboration</div>
+    <h2 style="margin:0 0 clamp(20px,3vw,28px);font-size:clamp(26px,4vw,44px);line-height:1.05;font-weight:500;letter-spacing:-.02em">Collaboration &amp; <em style="font-style:italic;font-weight:300">strategy</em></h2>
+    <div style="max-width:660px;display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(32px,5vw,52px)">
+      <p style="margin:0;font-size:clamp(16px,1.9vw,20px);line-height:1.5;font-weight:400;text-wrap:pretty">Creativity isn't magic — it's maintenance.</p>
+      <p style="margin:0;font-size:15px;line-height:1.65;color:var(--ink2);text-wrap:pretty">Sure, sometimes an idea drops into my brain at 2 AM. But most days I lean on processes that let me get back into that creative space on purpose, with other people in the room.</p>
+    </div>
+    <div data-grid2 style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)">
+      <sc-for list="{{ strategy }}" as="s" hint-placeholder-count="4">
+        <div data-reveal style="background:var(--bg);padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;gap:12px;min-height:190px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--sig)">{{ s.tag }}</span>
+          <h3 style="margin:0;font-size:18px;line-height:1.25;font-weight:500;letter-spacing:-.01em">{{ s.title }}</h3>
+          <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.7;color:var(--ink3);text-wrap:pretty">{{ s.prompt }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,8vw,100px) 0;border-bottom:1px solid var(--rule)">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:16px">04 — About</div>
+    <div data-hero-row style="display:flex;gap:clamp(32px,6vw,80px);align-items:flex-start">
+      <p style="flex:1 1 auto;margin:0;font-size:clamp(18px,2.4vw,26px);line-height:1.45;font-weight:400;letter-spacing:-.015em;text-wrap:pretty;max-width:760px">I'm a Senior Product Designer working across consumer and B2B products, and what I enjoy most is the messy middle — taking a problem nobody has framed yet and turning it into something people can actually use. I sit close to PMs and engineers from discovery through ship, and I care about the system behind the product as much as the pixels on the screen.</p>
+      <a href="About.dc.html" style="flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:13px 22px;border:1px solid var(--rule);display:inline-block;white-space:nowrap" style-hover="border-color:var(--ink)">More about me →</a>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,8vw,96px) 0">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:20px">05 — Contact</div>
+    <p style="margin:0 0 26px;font-size:clamp(15px,1.8vw,18px);line-height:1.5;color:var(--ink2);max-width:560px;text-wrap:pretty">Currently open to Sr. / Staff product design roles, and always happy to talk shop about funnels, design systems, or beauty tech.</p>
+    <a href="mailto:akshayrp09@gmail.com" style="font-family:'JetBrains Mono',monospace;font-size:clamp(18px,3.6vw,38px);letter-spacing:-.02em;display:inline-block;border-bottom:1px solid var(--rule);padding-bottom:6px">akshayrp09@gmail.com</a>
+  </section>
+</main>
+
+<footer style="border-top:1px solid var(--rule)">
+  <div style="max-width:1180px;margin:0 auto;padding:22px clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--ink3)">© 2026 Akshay R. Patil · Hosted on GitHub Pages</span>
+    <div style="display:flex;gap:18px">
+      <a href="https://www.instagram.com/thepatilakshay" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)">Instagram</a>
+      <a href="https://www.linkedin.com/in/akshaypatil09/" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)">LinkedIn</a>
+      <a href="https://github.com/akshayrpatil" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)">GitHub</a>
+      <a href="mailto:akshayrp09@gmail.com" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)">Email</a>
+    </div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultTheme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+const LINE = "Sr. Product Designer — Nykaa Beauty";
+const IMG = "assets/images/";
+
+class Component extends DCLogic {
+  state = { theme: "light", typed: "" };
+
+  componentDidMount() {
+    const saved = localStorage.getItem("arp-theme");
+    const theme = saved === "dark" || saved === "light" ? saved : (this.props.defaultTheme ?? "light");
+    document.documentElement.dataset.theme = theme;
+    this.setState({ theme });
+
+    let i = 0;
+    this._t = setInterval(() => {
+      i += 1;
+      this.setState({ typed: LINE.slice(0, i) });
+      if (i >= LINE.length) clearInterval(this._t);
+    }, 42);
+
+    this._io = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) { e.target.dataset.reveal = "in"; this._io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    setTimeout(() => {
+      document.querySelectorAll("[data-reveal]").forEach((n) => this._io.observe(n));
+    }, 60);
+
+    if (!matchMedia("(hover: hover)").matches) return;
+    const ring = this.ringRef;
+    if (!ring) return;
+    let x = -100, y = -100, tx = -100, ty = -100;
+    const move = (e) => {
+      tx = e.clientX; ty = e.clientY;
+      const over = e.target.closest && e.target.closest("[data-magnet],a,button");
+      const s = over ? 52 : 24;
+      ring.style.width = s + "px";
+      ring.style.height = s + "px";
+      ring.style.opacity = over ? "1" : ".5";
+    };
+    window.addEventListener("mousemove", move);
+    const loop = () => {
+      x += (tx - x) * 0.18; y += (ty - y) * 0.18;
+      const r = ring.offsetWidth / 2;
+      ring.style.transform = "translate(" + (x - r) + "px," + (y - r) + "px)";
+      this._raf = requestAnimationFrame(loop);
+    };
+    loop();
+    this._move = move;
+  }
+
+  componentWillUnmount() {
+    clearInterval(this._t);
+    if (this._io) this._io.disconnect();
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._move) window.removeEventListener("mousemove", this._move);
+  }
+
+  toggle = () => {
+    const next = this.state.theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem("arp-theme", next);
+    this.setState({ theme: next });
+  };
+
+  renderVals() {
+    const work = [
+      { no: "01", status: "Live", href: "Nykaa-PDP.dc.html", img: IMG + "pdpthumbnail.gif", slot: "PDP hero — sticky price demo", slotKind: "GIF",
+        title: "Nykaa PDP — Differentiated Category Experience",
+        desc: "Rebuilding a one-size-fits-all product page around how users actually evaluate each beauty category.",
+        metrics: [{ v: "+18%", k: "Add to cart" }, { v: "~₹8 Cr", k: "Impact" }] },
+      { no: "02", status: "2022", href: "Pickily-Post-Order.dc.html", slot: "Order tracking flow", slotKind: "GALLERY",
+        title: "Pickily App Post-Order Redesign",
+        desc: "Rebuilding order tracking, listing, cancellation and refunds into one coherent journey for 1M+ quick-commerce grocery shoppers.",
+        metrics: [{ v: "-73%", k: "Refund CS calls" }, { v: "-32%", k: "Maps API cost" }] },
+      { no: "03", status: "Soon", href: "#work", slot: "Component library overview", slotKind: "IMG",
+        title: "A Design System from Scratch",
+        desc: "Built the component library and governance model that now powers 4 product teams.",
+        metrics: [{ v: "4", k: "Teams adopted" }] },
+      { no: "04", status: "Soon", href: "#work", slot: "Onboarding screens", slotKind: "IMG",
+        title: "Onboarding Revamp",
+        desc: "Reworked first-run onboarding, lifting activation by rethinking what 'done' actually means.",
+        metrics: [{ v: "+26%", k: "Activation" }, { v: "-14%", k: "Support calls" }] },
+      { no: "05", status: "Soon", href: "#work", slot: "Checkout before / after", slotKind: "IMG",
+        title: "Redesigning Checkout",
+        desc: "Cut checkout drop-off by folding a six-step flow into two screens.",
+        metrics: [{ v: "-31%", k: "Drop-off" }, { v: "~₹12 Cr", k: "Impact" }] }
+    ];
+    return {
+      rootRef: (n) => { this.rootRef = n; },
+      ringRef: (n) => { this.ringRef = n; },
+      toggleTheme: this.toggle,
+      themeGlyph: this.state.theme === "dark" ? "☀" : "☾",
+      typed: this.state.typed,
+      spec: [
+        { k: "Role", v: "Sr. Product Designer" },
+        { k: "Exp", v: "6+ years" },
+        { k: "Edu", v: "IIT Bombay" },
+        { k: "Base", v: "Mumbai, India" }
+      ],
+      work: work.map((w) => ({ ...w, hasImg: !!w.img, noImg: !w.img })),
+      workCount: work.length + " projects",
+      strategy: [
+        { tag: "Strategy initiative", title: "[Strategy initiative title]", prompt: "[Describe a strategic decision you drove — planning a design system rollout, defining a product vision, or influencing roadmap priorities.]" },
+        { tag: "Cross-functional", title: "[Cross-functional collaboration]", prompt: "[Describe how you partnered with PM, Engineering, or Research on a specific initiative, and what came out of it.]" },
+        { tag: "Process & culture", title: "[Team process or culture]", prompt: "[Describe a process you introduced — critiques, review rituals, documentation — and its impact on the team.]" },
+        { tag: "Leadership", title: "[Mentorship or leadership]", prompt: "[Describe how you grew, mentored, or led other designers or a broader design practice.]" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

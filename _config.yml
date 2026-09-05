@@ -19,6 +19,12 @@ spec:
   - key: "Base"
     value: "Mumbai, India"
 
+hero_bio:
+  - "Own the pre-purchase funnel and beauty tech innovation of Nykaa Beauty."
+  - "Previously worked on social commerce and the affiliate program at Nykaa."
+  - "Created the credit and disbursement experience on the Udaan Capital app at Udaan."
+  - "Worked end-to-end on Pickily App, Udaan's quick-commerce grocery app."
+
 logos:
   - name: "Nykaa"
     file: nykaa.png
