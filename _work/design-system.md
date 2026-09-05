@@ -1,7 +1,10 @@
 ---
 title: "A Design System from Scratch"
 summary: "Built the component library and governance model that now powers 4 product teams."
-cover: /assets/images/placeholder-2.svg
+cover: ""
+slot: "Component library overview"
+slot_kind: "IMG"
+status: "Soon"
 role: "Design Systems Lead"
 timeline: "2024 · 6 months, ongoing"
 team: "2 designers, 3 engineers"

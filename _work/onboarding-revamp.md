@@ -1,7 +1,10 @@
 ---
 title: "Onboarding Revamp"
 summary: "Reworked first-run onboarding, lifting activation by rethinking what 'done' means."
-cover: /assets/images/placeholder-3.svg
+cover: ""
+slot: "Onboarding screens"
+slot_kind: "IMG"
+status: "Soon"
 role: "Product Designer"
 timeline: "2023 · 8 weeks"
 team: "1 PM, 1 engineer, 1 designer (me)"

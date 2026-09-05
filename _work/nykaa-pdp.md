@@ -2,6 +2,7 @@
 title: "Nykaa PDP - Differentiated Category Experience"
 summary: "Rebuilding a one-size-fits-all product page around how users actually evaluate each beauty category."
 cover: assets/images/pdpthumbnail.gif
+status: "Live"
 role: "Design Owner (PDP)"
 timeline: "Feb 2026 – Present"
 team: "PM, Engineering, Analytics"

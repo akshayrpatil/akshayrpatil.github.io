@@ -1,0 +1,72 @@
+---
+layout: default
+---
+<div class="wrap">
+
+  <section class="about-page__intro">
+    <p class="eyebrow eyebrow--roomy">About</p>
+    <div class="about-page__split">
+      <div class="about-page__body">
+        <h1>{{ page.heading | default: page.title }}</h1>
+        {{ content }}
+      </div>
+      <div class="about-page__aside">
+        <img class="portrait" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="{{ site.title }}">
+        <dl class="spec">
+          {% for row in site.spec %}
+          <div class="spec__row">
+            <dt class="spec__key">{{ row.key }}</dt>
+            <dd class="spec__value">{{ row.value }}</dd>
+          </div>
+          {% endfor %}
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">Experience</p>
+    <h2 class="section__title">Where I've worked</h2>
+    <div class="roles">
+      {% for role in site.experience %}
+      <div class="role" data-reveal>
+        <div class="role__head">
+          <div class="role__id">
+            <span class="role__company">{{ role.company }}</span>
+            <span class="role__title">{{ role.title }}</span>
+          </div>
+          <span class="role__when">{{ role.when }}</span>
+        </div>
+        <p>{{ role.note }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">Beyond the day job</p>
+    <h2 class="section__title">Speaking, mentorship &amp; side projects</h2>
+    <div class="tile-grid">
+      {% for item in site.beyond %}
+      <div class="tile" data-reveal>
+        <div class="tile__top">
+          <span class="tile__tag">{{ item.tag }}</span>
+          <span class="tile__no">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+        </div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow eyebrow--tight">Contact</p>
+    <p class="contact__note">{{ site.contact_note }}</p>
+    <a class="contact__email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    <div class="contact__cta">
+      <a class="btn btn--ghost" href="{{ '/' | relative_url }}#work">← See the work</a>
+    </div>
+  </section>
+
+</div>

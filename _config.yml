@@ -1,33 +1,5 @@
 title: "Akshay R. Patil"
-role: "Senior Product Designer"
-location: "Mumbai"
 site_title: "Akshay R. Patil | Mumbai-based Senior Product Designer with 6 years of experience"
-tagline: "I've been shipping products for almost 6 years, my strengths are product thinking, AI-augmented workflows, and stakeholder management."
-hero_chips:
-  - "Sr. Product Designer"
-  - "6+ Years in Design"
-  - "IIT Bombay"
-hero_bio:
-  - "Own the pre-purchase funnel and beauty tech innovation of Nykaa Beauty."
-  - "Previously worked on social commerce and the affiliate program at Nykaa."
-  - "Created the credit and disbursement experience on the Udaan Capital app at Udaan."
-  - "Worked end-to-end on Pickily App, Udaan's quick-commerce grocery app."
-strategy_quote: "Creativity isn't magic but it's maintenance...."
-strategy_quote_subtext: "Sure, sometimes an idea drops into my brain at 2 AM. But most days? I have processes in place that help me tap into my creative space whenever I want."
-strategy_items:
-  - title: "[Strategy initiative title]"
-    description: "[Describe a strategic decision you drove — e.g., planning a design system rollout, defining a product vision, or influencing roadmap priorities.]"
-    cover: /assets/images/placeholder-1.svg
-  - title: "[Cross-functional collaboration]"
-    description: "[Describe how you partnered with PM, Engineering, or Research on a specific initiative, and what came out of it.]"
-    cover: /assets/images/placeholder-2.svg
-  - title: "[Team process or culture]"
-    description: "[Describe a process you introduced — design critiques, review rituals, documentation — and its impact on the team.]"
-    cover: /assets/images/placeholder-3.svg
-  - title: "[Mentorship or leadership]"
-    description: "[Describe how you grew, mentored, or led other designers or a broader design practice.]"
-    cover: /assets/images/placeholder-4.svg
-
 email: "akshayrp09@gmail.com"
 description: >
   Mumbai-based Senior Product Designer with 6 years of experience -
@@ -35,10 +7,93 @@ description: >
 url: "https://akshayrpatil.github.io"
 baseurl: "" # user site (akshayrpatil.github.io) is always served at root
 
-logo_initials: "AP"
+# Hero
+typed_line: "Sr. Product Designer — Nykaa Beauty"
+spec:
+  - key: "Role"
+    value: "Sr. Product Designer"
+  - key: "Exp"
+    value: "6+ years"
+  - key: "Edu"
+    value: "IIT Bombay"
+  - key: "Base"
+    value: "Mumbai, India"
+
+logos:
+  - name: "Nykaa"
+    file: nykaa.png
+  - name: "Udaan Capital"
+    file: udaan-capital.png
+  - name: "Pickily"
+    file: pickily.png
+  - name: "Udaan"
+    file: udaan.png
+  - name: "BizNumbers"
+    file: biznumbers.png
+  - name: "ignio, TCS"
+    file: ignio-tcs.png
+
+# Collaboration & strategy
+strategy_quote: "Creativity isn't magic — it's maintenance."
+strategy_quote_subtext: "Sure, sometimes an idea drops into my brain at 2 AM. But most days I lean on processes that let me get back into that creative space on purpose, with other people in the room."
+strategy_items:
+  - tag: "Strategy initiative"
+    title: "[Strategy initiative title]"
+    description: "[Describe a strategic decision you drove — planning a design system rollout, defining a product vision, or influencing roadmap priorities.]"
+  - tag: "Cross-functional"
+    title: "[Cross-functional collaboration]"
+    description: "[Describe how you partnered with PM, Engineering, or Research on a specific initiative, and what came out of it.]"
+  - tag: "Process & culture"
+    title: "[Team process or culture]"
+    description: "[Describe a process you introduced — critiques, review rituals, documentation — and its impact on the team.]"
+  - tag: "Leadership"
+    title: "[Mentorship or leadership]"
+    description: "[Describe how you grew, mentored, or led other designers or a broader design practice.]"
+
+# About
+about_excerpt: "I'm a Senior Product Designer working across consumer and B2B products, and what I enjoy most is the messy middle — taking a problem nobody has framed yet and turning it into something people can actually use. I sit close to PMs and engineers from discovery through ship, and I care about the system behind the product as much as the pixels on the screen."
+
+experience:
+  - company: "Nykaa Beauty"
+    title: "Sr. Product Designer"
+    when: "Feb 2023 — Present"
+    note: "Own the pre-purchase funnel and beauty tech innovation. Previously social commerce and the affiliate program."
+  - company: "Udaan Capital"
+    title: "Product Designer"
+    when: "2021 — 2023"
+    note: "Created the credit and disbursement experience on the Udaan Capital app."
+  - company: "Pickily · Udaan"
+    title: "Product Designer"
+    when: "2021 — 2022"
+    note: "Worked end-to-end on Pickily, Udaan's quick-commerce grocery app, from 0→1 through post-order."
+  - company: "BizNumbers"
+    title: "Product Designer"
+    when: "2020 — 2021"
+    note: "B2B fintech surfaces — reconciliation, dashboards, and reporting flows."
+  - company: "ignio · TCS"
+    title: "UX Designer"
+    when: "2019 — 2020"
+    note: "Enterprise AIOps product. Where I learned to design for density and for people who read screens all day."
+
+beyond:
+  - tag: "Speaking"
+    title: "[Talk or panel title]"
+    description: "[Where you spoke, to whom, and the one idea you wanted the room to leave with.]"
+  - tag: "Mentorship"
+    title: "[Mentorship programme or cohort]"
+    description: "[Who you mentored, over what period, and how you structured it — portfolio reviews, weekly critiques, career coaching.]"
+  - tag: "Side project"
+    title: "[Side project name]"
+    description: "[What you built outside work, why you started it, and what it taught you that the day job wouldn't.]"
+  - tag: "Writing"
+    title: "[Article or series]"
+    description: "[Something you've written about design practice, plus where it lives.]"
+
+# Contact
+contact_note: "Currently open to Sr. / Staff product design roles, and always happy to talk shop about funnels, design systems, or beauty tech."
 
 social:
-  linkedin: "https://www.linkedin.com/in/akshaypatil09/"   # e.g. https://linkedin.com/in/yourname
+  linkedin: "https://www.linkedin.com/in/akshaypatil09/"
   instagram: "https://www.instagram.com/thepatilakshay"
   github: "https://github.com/akshayrpatil"
   dribbble: ""
@@ -76,3 +131,4 @@ exclude:
   - vendor
   - node_modules
   - .github
+  - v2

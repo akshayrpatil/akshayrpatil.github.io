@@ -2,45 +2,68 @@
 layout: default
 ---
 <article class="case-study">
-  <header class="case-study__header wrap">
-    <a class="case-study__back" href="{{ '/' | relative_url }}#work">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-      All work
-    </a>
-    <h1>{{ page.title }}</h1>
-    <p class="case-study__summary">{{ page.summary }}</p>
+  <div class="wrap">
 
-    <dl class="case-study__meta">
-      {% if page.role %}<div><dt>Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
-      {% if page.timeline %}<div><dt>Timeline</dt><dd>{{ page.timeline }}</dd></div>{% endif %}
-      {% if page.team %}<div><dt>Team</dt><dd>{{ page.team }}</dd></div>{% endif %}
-      {% if page.tools %}<div><dt>Tools</dt><dd>{{ page.tools }}</dd></div>{% endif %}
-    </dl>
-  </header>
+    <header class="case-study__hero">
+      <a class="case-study__back" href="{{ '/' | relative_url }}#work">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        All work
+      </a>
+      <h1 class="case-study__title">{{ page.title }}</h1>
+      {% if page.summary %}<p class="case-study__summary">{{ page.summary }}</p>{% endif %}
 
-  {% if page.cover %}
-  <div class="case-study__cover wrap">
-    <img src="{{ page.cover | relative_url }}" alt="{{ page.title }} cover image">
-  </div>
-  {% endif %}
+      <dl class="case-study__meta">
+        {% if page.role %}<div><dt>Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
+        {% if page.timeline %}<div><dt>Timeline</dt><dd>{{ page.timeline }}</dd></div>{% endif %}
+        {% if page.team %}<div><dt>Team</dt><dd>{{ page.team }}</dd></div>{% endif %}
+        {% if page.tools %}<div><dt>Tools</dt><dd>{{ page.tools }}</dd></div>{% endif %}
+      </dl>
 
-  <div class="case-study__body wrap">
-    {{ content }}
-  </div>
-
-  <nav class="case-study__nextprev wrap">
-    {% assign items = site.work | sort: 'order' %}
-    {% for item in items %}
-      {% if item.url == page.url %}
-        {% assign idx = forloop.index0 %}
+      {% if page.metrics %}
+      <div class="case-study__metrics">
+        <ul class="metrics">
+          {% for m in page.metrics %}
+          {% if m.label %}
+          <li>
+            <span class="metrics__value">{{ m.value }}</span>
+            <span class="metrics__label">{{ m.label }}</span>
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
       {% endif %}
-    {% endfor %}
-    {% assign next_idx = idx | plus: 1 %}
-    {% assign prev_idx = idx | minus: 1 %}
-    {% if items[next_idx] %}
-      <a class="case-study__next" href="{{ items[next_idx].url | relative_url }}">Next: {{ items[next_idx].title }} &rarr;</a>
-    {% elsif items[0] %}
-      <a class="case-study__next" href="{{ items[0].url | relative_url }}">Back to first project &rarr;</a>
-    {% endif %}
-  </nav>
+
+      {% if page.cover and page.cover != "" %}
+      <div class="case-study__cover">
+        <img src="{{ page.cover | relative_url }}" alt="{{ page.title }}">
+      </div>
+      {% endif %}
+    </header>
+
+    <div class="case-study__layout">
+      <aside class="case-study__rail" hidden>
+        <p class="eyebrow">Contents</p>
+        <ol></ol>
+      </aside>
+
+      <div class="case-study__body">
+        {{ content }}
+      </div>
+    </div>
+
+    <nav class="case-study__nextprev">
+      {% assign items = site.work | sort: 'order' %}
+      {% for item in items %}
+        {% if item.url == page.url %}{% assign idx = forloop.index0 %}{% endif %}
+      {% endfor %}
+      {% assign next_idx = idx | plus: 1 %}
+      {% if items[next_idx] %}
+      <a class="case-study__next" href="{{ items[next_idx].url | relative_url }}">Next — {{ items[next_idx].title }} →</a>
+      {% elsif items[0] %}
+      <a class="case-study__next" href="{{ items[0].url | relative_url }}">Back to first project →</a>
+      {% endif %}
+    </nav>
+
+  </div>
 </article>

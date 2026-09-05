@@ -1,7 +1,10 @@
 ---
 title: "Redesigning Checkout"
 summary: "Cut checkout drop-off by simplifying a 6-step flow into 2 screens."
-cover: /assets/images/placeholder-1.svg
+cover: ""
+slot: "Checkout before / after"
+slot_kind: "IMG"
+status: "Soon"
 role: "Lead Product Designer"
 timeline: "Q1–Q2 2025 · 10 weeks"
 team: "1 PM, 2 engineers, 1 designer (me)"

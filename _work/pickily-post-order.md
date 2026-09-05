@@ -2,6 +2,7 @@
 title: "Pickily App Post-Order Redesign 2022"
 summary: "Rebuilding order tracking, listing, cancellation and refunds into one coherent journey for 1M+ quick-commerce grocery shoppers."
 cover: /assets/images/pickily.png
+status: "2022"
 role: "Product Designer"
 timeline: "udaan · 2022"
 team: "1 Product Engineer, 2 Developers"

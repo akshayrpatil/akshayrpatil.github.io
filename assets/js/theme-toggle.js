@@ -33,6 +33,13 @@
     root.style.setProperty("--theme-transition-y", y + "px");
     root.style.setProperty("--theme-transition-radius", radius + "px");
 
-    document.startViewTransition(applyTheme);
+    // An aborted transition (rapid second click, or a document that isn't
+    // rendering) rejects these; the theme is applied either way, so swallow them
+    // rather than leaving an unhandled rejection in the console.
+    var transition = document.startViewTransition(applyTheme);
+    var noop = function () {};
+    transition.ready.catch(noop);
+    transition.finished.catch(noop);
+    transition.updateCallbackDone.catch(noop);
   });
 })();
