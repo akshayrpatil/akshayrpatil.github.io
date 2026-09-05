@@ -1,7 +1,7 @@
 ---
 title: "Pickily App Post-Order Redesign 2022"
 summary: "The most trust-critical screen in a quick-commerce app wasn't ours. Bringing delivery tracking in-house for 1M+ grocery shoppers."
-cover: /assets/images/pickily.png
+cover: /assets/images/pickily19.png
 status: "2022"
 role: "Product Designer"
 timeline: "udaan · 2022"
