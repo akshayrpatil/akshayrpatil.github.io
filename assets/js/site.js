@@ -146,4 +146,37 @@
 
     sync();
   })();
+
+  /* ---------- Case study image lightbox ---------- */
+  (function () {
+    var images = document.querySelectorAll(".case-study__body img");
+    if (!images.length) return;
+
+    var overlay = document.createElement("div");
+    overlay.className = "lightbox";
+    var full = document.createElement("img");
+    full.className = "lightbox__img";
+    overlay.appendChild(full);
+    document.body.appendChild(overlay);
+
+    function close() {
+      overlay.classList.remove("is-open");
+      document.body.style.removeProperty("overflow");
+    }
+
+    images.forEach(function (img) {
+      img.classList.add("is-zoomable");
+      img.addEventListener("click", function () {
+        full.src = img.currentSrc || img.src;
+        full.alt = img.alt || "";
+        overlay.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    overlay.addEventListener("click", close);
+    window.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+    });
+  })();
 })();

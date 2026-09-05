@@ -12,6 +12,7 @@ tools: "Figma, Maze, Amplitude"
 metrics:
   - label: "Checkout drop-off"
     value: "-31%"
+    trend: "down"
   - label: "Impact"
     value: "~₹12 Cr"
   - "Design initiative"

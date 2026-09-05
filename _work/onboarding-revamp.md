@@ -12,8 +12,10 @@ tools: "Figma, UserTesting"
 metrics:
   - label: "Activation"
     value: "+26%"
+    trend: "up"
   - label: "Support calls"
     value: "-14%"
+    trend: "down"
   - "Design initiative"
 order: 3
 ---

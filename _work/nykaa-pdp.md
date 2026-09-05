@@ -9,6 +9,7 @@ team: "PM, Engineering, Analytics"
 metrics:
   - label: "Add to cart"
     value: "+18%"
+    trend: "up"
   - label: "Impact"
     value: "~₹8 Cr"
   - "Design initiative"
