@@ -1268,6 +1268,8 @@ main { display: block; }
 
 .case-study__body img.is-zoomable { cursor: zoom-in; }
 
+.case-study__body img.is-bw { filter: grayscale(1); }
+
 .case-study__body p.case-study__caption {
   margin-top: 8px;
   text-align: center;

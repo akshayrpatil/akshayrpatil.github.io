@@ -1,10 +1,10 @@
 ---
-title: "Pickily App Post-Order Redesign 2022"
+title: "Pickily App Post-Order Redesign 2022-23"
 summary: "The most trust-critical screen in a quick-commerce app wasn't ours. Bringing delivery tracking in-house for 1M+ grocery shoppers."
 cover: /assets/images/pickily19.png
 status: "2022"
 role: "Product Designer"
-timeline: "udaan · 2022"
+timeline: "udaan · 2021-23"
 team: "1 Product Engineer, 2 Developers"
 metrics:
   - label: "Refund CS calls"
@@ -13,7 +13,7 @@ metrics:
   - label: "Maps API cost"
     value: "-32%"
     trend: "down"
-  - "Product + Design 2022"
+  - "Product + Design 2022-23"
 order: 1
 ---
 
@@ -309,4 +309,4 @@ Pickily was shut down in 2023 - a Org-level decision and a shift in udaan's busi
 
 I still count it as the project where I learned the most. Not because it scaled, but because it was the first time I owned a surface end to end, took it in-house, and had to be responsible for what happened at the doorstep.
 
-*Pickily · udaan · Product Designer · 2022*
+*Pickily · udaan · Product Designer · 2022-23*
