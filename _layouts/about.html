@@ -32,8 +32,11 @@ layout: default
       <div class="role" data-reveal>
         <div class="role__head">
           <div class="role__id">
-            <span class="role__company">{{ role.company }}</span>
-            <span class="role__title">{{ role.title }}</span>
+            {% if role.logo %}<img class="role__logo" src="{{ '/assets/images/logos/' | append: role.logo | relative_url }}" alt="{{ role.company }} logo">{% endif %}
+            <div class="role__id-text">
+              <span class="role__company">{{ role.company }}</span>
+              <span class="role__title">{{ role.title }}</span>
+            </div>
           </div>
           <span class="role__when">{{ role.when }}</span>
         </div>

@@ -1040,6 +1040,20 @@ main { display: block; }
 .role__id {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.role__logo {
+  height: 58px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.role__id-text {
+  display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   gap: 12px;
 }
