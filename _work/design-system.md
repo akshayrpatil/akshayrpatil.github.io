@@ -1,19 +1,21 @@
 ---
-title: "A Design System from Scratch"
-summary: "Built the component library and governance model that now powers 4 product teams."
-cover: ""
+title: "How we made NykaaPlay live shows engaging"
+summary: "Rethinking the live-commerce show experience to hold viewers longer and convert while they watch."
+cover: "/assets/images/Quiz.png"
 slot: "Component library overview"
 slot_kind: "IMG"
-status: "Soon"
-role: "Design Systems Lead"
+status: "Live"
+locked: true
+role: "Product Design"
 timeline: "2024 · 6 months, ongoing"
 team: "2 designers, 3 engineers"
 tools: "Figma, Tokens Studio, Storybook"
 metrics:
-  - label: "Adopted by"
-    value: "4 product teams"
+  - label: "Active users in Live Stream"
+    value: "from 73k to 130k"
+    trend: "up"
   - "Design initiative"
-order: 2
+order: 3
 ---
 
 ## The problem

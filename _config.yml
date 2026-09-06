@@ -40,7 +40,7 @@ logos:
     file: ignio-tcs.png
 
 # Collaboration & strategy
-strategy_quote: "Creativity isn't magic — it's maintenance."
+strategy_quote: "Creativity isn't magic - it's maintenance."
 strategy_quote_subtext: "Sure, sometimes an idea drops into my brain at 2 AM. But most days I lean on processes that let me get back into that creative space on purpose, with other people in the room."
 strategy_items:
   - tag: "Strategy initiative"
@@ -57,28 +57,20 @@ strategy_items:
     description: "[Describe how you grew, mentored, or led other designers or a broader design practice.]"
 
 # About
-about_excerpt: "I'm a Senior Product Designer working across consumer and B2B products, and what I enjoy most is the messy middle — taking a problem nobody has framed yet and turning it into something people can actually use. I sit close to PMs and engineers from discovery through ship, and I care about the system behind the product as much as the pixels on the screen."
+about_excerpt: "I'm a Senior Product Designer working across consumer and B2B products, and what I enjoy most is the messy middle - taking a problem nobody has framed yet and turning it into something people can actually use. I sit close to PMs and engineers from discovery through ship, and I care about the system behind the product as much as the pixels on the screen."
 
 experience:
   - company: "Nykaa Beauty"
     title: "Sr. Product Designer"
-    when: "Feb 2023 — Present"
+    when: "2023 - Present"
     note: "Own the pre-purchase funnel and beauty tech innovation. Previously social commerce and the affiliate program."
-  - company: "Udaan Capital"
+  - company: "Udaan"
     title: "Product Designer"
-    when: "2021 — 2023"
-    note: "Created the credit and disbursement experience on the Udaan Capital app."
-  - company: "Pickily · Udaan"
-    title: "Product Designer"
-    when: "2021 — 2022"
-    note: "Worked end-to-end on Pickily, Udaan's quick-commerce grocery app, from 0→1 through post-order."
-  - company: "BizNumbers"
-    title: "Product Designer"
-    when: "2020 — 2021"
-    note: "B2B fintech surfaces — reconciliation, dashboards, and reporting flows."
-  - company: "ignio · TCS"
+    when: "2021 - 2023"
+    note: "Worked across Pickily - Udaan's quick-commerce grocery app, end-to-end from 0→1 through post-order; Udaan Capital - the credit and disbursement experience; and BizNumbers."
+  - company: "Digitate · TCS"
     title: "UX Designer"
-    when: "2019 — 2020"
+    when: "2020 - 2021"
     note: "Enterprise AIOps product. Where I learned to design for density and for people who read screens all day."
 
 beyond:
@@ -87,7 +79,7 @@ beyond:
     description: "[Where you spoke, to whom, and the one idea you wanted the room to leave with.]"
   - tag: "Mentorship"
     title: "[Mentorship programme or cohort]"
-    description: "[Who you mentored, over what period, and how you structured it — portfolio reviews, weekly critiques, career coaching.]"
+    description: "[Who you mentored, over what period, and how you structured it - portfolio reviews, weekly critiques, career coaching.]"
   - tag: "Side project"
     title: "[Side project name]"
     description: "[What you built outside work, why you started it, and what it taught you that the day job wouldn't.]"

@@ -368,10 +368,11 @@ main { display: block; }
 
 .portrait {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center top;
   border: 1px solid var(--rule);
+  border-radius: 50%;
   display: block;
   background: var(--surface);
 }
@@ -637,6 +638,10 @@ main { display: block; }
 
 .work-card:hover { border-color: var(--text-dim); color: var(--text); }
 
+.work-card--locked { cursor: default; }
+.work-card--locked:hover { border-color: var(--rule); }
+.work-card--locked .work-card__arrow { display: none; }
+
 .work-card__top {
   display: flex;
   align-items: center;
@@ -658,6 +663,18 @@ main { display: block; }
   padding: 4px 8px;
   border: 1px solid var(--rule);
   color: var(--text-dim);
+}
+
+.work-card__status--live {
+  background: #1a7f37;
+  border-color: #1a7f37;
+  color: #fff;
+}
+
+.work-card__status--2022 {
+  background: #3a3a3a;
+  border-color: #3a3a3a;
+  color: #fff;
 }
 
 .work-card__media {

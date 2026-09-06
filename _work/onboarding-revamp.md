@@ -1,23 +1,21 @@
 ---
-title: "Onboarding Revamp"
-summary: "Reworked first-run onboarding, lifting activation by rethinking what 'done' means."
-cover: ""
+title: "How we automate influencers' Instagram DMs and comments - Nykaa × Insta Collab"
+summary: "AutoDM affiliate links: an Instagram Collab flow that replies to creators' comments and DMs with their trackable Nykaa link automatically."
+cover: "/assets/images/AutoDM.png"
 slot: "Onboarding screens"
 slot_kind: "IMG"
-status: "Soon"
+status: "Live"
+locked: true
 role: "Product Designer"
 timeline: "2023 · 8 weeks"
 team: "1 PM, 1 engineer, 1 designer (me)"
 tools: "Figma, UserTesting"
 metrics:
-  - label: "Activation"
-    value: "+26%"
+  - label: "Interaction on Influencer Profiles"
+    value: "+80% YoY"
     trend: "up"
-  - label: "Support calls"
-    value: "-14%"
-    trend: "down"
-  - "Design initiative"
-order: 3
+  - "Product + Design initiative"
+order: 4
 ---
 
 ## The problem
