@@ -43,7 +43,6 @@ layout: default
   </section>
 
   <section class="logos">
-    <span class="logos__label">Worked<br>with</span>
     <div class="logos__viewport">
       <div class="logos__track">
         <div class="logos__row">
@@ -84,7 +83,6 @@ layout: default
       <a class="work-card" data-reveal href="{{ item.url | relative_url }}">
       {% endif %}
         <div class="work-card__top">
-          <span class="work-card__no">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
           {% if badge %}<span class="work-card__status{% if item.status %} work-card__status--{{ item.status | downcase }}{% endif %}">{{ badge }}</span>{% endif %}
         </div>
         <div class="work-card__media">
