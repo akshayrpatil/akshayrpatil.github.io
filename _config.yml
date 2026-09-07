@@ -40,21 +40,25 @@ logos:
     file: ignio-tcs.png
 
 # Collaboration & strategy
-strategy_quote: "Creativity isn't magic - it's maintenance."
-strategy_quote_subtext: "Sure, sometimes an idea drops into my brain at 2 AM. But most days I lean on processes that let me get back into that creative space on purpose, with other people in the room."
+strategy_quote: "Creativity isn't magic - it's maintenance, and it should pass on to the peers."
+strategy_quote_subtext: "I also spend some of my time simplifying process and passing it on to others. Most days I lean on processes that let me get back into that creative space on purpose, with other people in the room."
 strategy_items:
   - tag: "Strategy initiative"
-    title: "[Strategy initiative title]"
-    description: "[Describe a strategic decision you drove — planning a design system rollout, defining a product vision, or influencing roadmap priorities.]"
+    title: "Building the story leadership takes to the board"
+    description: "I contribute new product ideas to Nykaa's Annual Operating Plan and investor presentations, and build the working prototypes that design and product leadership present to the board and C-suite. That includes producing a demo video in After Effects that lands a new initiative in under 90 seconds - because at that level, you get one shot to make an idea feel real."
+    video: /assets/images/investerdeck.mp4
   - tag: "Cross-functional"
-    title: "[Cross-functional collaboration]"
-    description: "[Describe how you partnered with PM, Engineering, or Research on a specific initiative, and what came out of it.]"
+    title: "Co-creating features, not just designing them"
+    description: "I work with PMs from the problem stage rather than the handoff stage - brainstorming together, contributing to the PRD, and shaping what a feature should be before anyone opens Figma. The features that came out of this are noticeably better than the ones that started as a brief."
+    image: /assets/images/collab.png
   - tag: "Process & culture"
-    title: "[Team process or culture]"
-    description: "[Describe a process you introduced — critiques, review rituals, documentation — and its impact on the team.]"
+    title: "Self-initiated work alongside the roadmap"
+    description: "Some of the work I'm proudest of wasn't assigned. Alongside product tasks and BAU, I pitch and design features that make the app better: Picture-in-Picture for NykaaPlay live shows, Live Quiz, several pieces of the PDP revamp, and the Routine Builder - which lifts both average basket size and order value."
+    image: /assets/images/initiatives.png
   - tag: "Leadership"
-    title: "[Mentorship or leadership]"
-    description: "[Describe how you grew, mentored, or led other designers or a broader design practice.]"
+    title: "Onboarding and mentoring designers into the system"
+    description: "I've onboarded four designers onto the team. When someone moves on, I take their KT, hold their BAU until a replacement joins, then run the handover to the new designer and stay with them through their first tasks until they're comfortable in the system. It keeps work from stalling and gets people productive faster than documentation alone would."
+    image: /assets/images/ktsessions.png
 
 # About
 about_excerpt: "I'm a Senior Product Designer working across consumer and B2B products, and what I enjoy most is the messy middle - taking a problem nobody has framed yet and turning it into something people can actually use. I sit close to PMs and engineers from discovery through ship, and I care about the system behind the product as much as the pixels on the screen."
@@ -77,18 +81,10 @@ experience:
     note: "Enterprise AIOps product. Where I learned to design for density and for people who read screens all day."
 
 beyond:
-  - tag: "Speaking"
-    title: "[Talk or panel title]"
-    description: "[Where you spoke, to whom, and the one idea you wanted the room to leave with.]"
-  - tag: "Mentorship"
-    title: "[Mentorship programme or cohort]"
-    description: "[Who you mentored, over what period, and how you structured it - portfolio reviews, weekly critiques, career coaching.]"
   - tag: "Side project"
-    title: "[Side project name]"
-    description: "[What you built outside work, why you started it, and what it taught you that the day job wouldn't.]"
-  - tag: "Writing"
-    title: "[Article or series]"
-    description: "[Something you've written about design practice, plus where it lives.]"
+    title: "Dshala App and dshala.com"
+    description: "Built Dshala.com - web and mobile apps (Android + iOS) using the Material 3 design system - to help design school aspirants practice exam questions inside the app. It includes push notifications, a leaderboard, in-app purchase of mock tests, a Quiz Zone, flashcards, and more. The app is live on the Play Store, and currently in review on the App Store."
+    image: /assets/images/side.png
 
 # Contact
 contact_note: "Currently open to Sr. / Staff product design roles, and always happy to talk shop about funnels, design systems, or beauty tech."

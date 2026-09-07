@@ -125,7 +125,6 @@ layout: default
     </div>
   </section>
 
-  {% comment %} Collaboration section hidden for now
   <section id="strategy" class="section">
     <p class="eyebrow">03 — Collaboration</p>
     <h2 class="section__title">Collaboration &amp; <em>strategy</em></h2>
@@ -136,6 +135,11 @@ layout: default
     <div class="tile-grid">
       {% for item in site.strategy_items %}
       <div class="tile" data-reveal>
+        {% if item.video and item.video != "" %}
+        <video class="tile__media" src="{{ item.video | relative_url }}" autoplay muted loop playsinline></video>
+        {% elsif item.image and item.image != "" %}
+        <img class="tile__media" src="{{ item.image | relative_url }}" alt="{{ item.title }}">
+        {% endif %}
         <span class="tile__tag">{{ item.tag }}</span>
         <h3>{{ item.title }}</h3>
         <p>{{ item.description }}</p>
@@ -143,7 +147,6 @@ layout: default
       {% endfor %}
     </div>
   </section>
-  {% endcomment %}
 
   <section id="about" class="section">
     <p class="eyebrow">04 — About</p>

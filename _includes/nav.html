@@ -3,6 +3,7 @@
     <a class="site-nav__brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <nav class="site-nav__links">
       <a href="{{ '/' | relative_url }}#work" data-section="work">Work</a>
+      <a href="{{ '/' | relative_url }}#strategy" data-section="strategy">Collab</a>
       <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} class="is-active"{% endif %}>About</a>
       <a href="{{ site.social.resume_url | default: '#' }}"{% if site.social.resume_url and site.social.resume_url != "" %} download{% endif %}>Resume</a>
     </nav>

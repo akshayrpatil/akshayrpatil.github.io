@@ -48,19 +48,17 @@ layout: default
 
   <section class="section">
     <p class="eyebrow">Beyond the day job</p>
-    <h2 class="section__title">Speaking, mentorship &amp; side projects</h2>
-    <div class="tile-grid">
-      {% for item in site.beyond %}
-      <div class="tile" data-reveal>
-        <div class="tile__top">
-          <span class="tile__tag">{{ item.tag }}</span>
-          <span class="tile__no">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-        </div>
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-      </div>
-      {% endfor %}
+    <h2 class="section__title">Side Project</h2>
+    {% for item in site.beyond %}
+    <div class="tile tile--full" data-reveal>
+      {% if item.image and item.image != "" %}
+      <img class="tile__media tile__media--wide" src="{{ item.image | relative_url }}" alt="{{ item.title }}">
+      {% endif %}
+      <span class="tile__tag">{{ item.tag }}</span>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
     </div>
+    {% endfor %}
   </section>
 
   <section class="section">
