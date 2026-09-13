@@ -895,6 +895,7 @@ main { display: block; }
 }
 
 .tile {
+  position: relative;
   background: var(--bg);
   border: 1px solid var(--rule);
   padding: 0 0 clamp(20px, 2.6vw, 30px);
@@ -928,12 +929,18 @@ main { display: block; }
 }
 
 .tile__tag {
+  position: absolute;
+  top: clamp(12px, 1.6vw, 16px);
+  left: clamp(12px, 1.6vw, 16px);
+  z-index: 2;
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  font-size: 11px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
-  padding: clamp(20px, 2.6vw, 30px) clamp(20px, 2.6vw, 30px) 0;
+  color: #fff;
+  background: var(--accent);
+  padding: 5px 10px;
+  border-radius: 3px;
 }
 
 .tile__no {
@@ -943,11 +950,11 @@ main { display: block; }
 }
 
 .tile h3 {
-  margin-top: 8px;
+  margin-top: 0;
   font-size: 18px;
   line-height: 1.25;
   letter-spacing: -0.01em;
-  padding: 0 clamp(20px, 2.6vw, 30px);
+  padding: clamp(20px, 2.6vw, 30px) clamp(20px, 2.6vw, 30px) 0;
 }
 
 .tile p {
