@@ -147,9 +147,9 @@
     sync();
   })();
 
-  /* ---------- Case study image lightbox ---------- */
+  /* ---------- Case study / playground image lightbox ---------- */
   (function () {
-    var images = document.querySelectorAll(".case-study__body img");
+    var images = document.querySelectorAll(".case-study__body img, .playground__card img");
     if (!images.length) return;
 
     var overlay = document.createElement("div");

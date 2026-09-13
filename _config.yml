@@ -60,6 +60,9 @@ strategy_items:
     description: "I've onboarded four designers onto the team. When someone moves on, I take their KT, hold their BAU until a replacement joins, then run the handover to the new designer and stay with them through their first tasks until they're comfortable in the system. It keeps work from stalling and gets people productive faster than documentation alone would."
     image: /assets/images/ktsessions.png
 
+# Playground
+playground_subtext: "Real work, just not big enough to earn its own case study."
+
 # About
 about_excerpt: "I'm a Senior Product Designer working across consumer and B2B products, and what I enjoy most is the messy middle - taking a problem nobody has framed yet and turning it into something people can actually use. I sit close to PMs and engineers from discovery through ship, and I care about the system behind the product as much as the pixels on the screen."
 

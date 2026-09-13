@@ -148,8 +148,29 @@ layout: default
     </div>
   </section>
 
+  {% assign playground_images = site.static_files | where_exp: "f", "f.path contains 'ui-design'" %}
+  <section id="playground" class="section playground">
+    <p class="eyebrow">04 — Playground</p>
+    <h2 class="section__title">~Playground~</h2>
+    <p class="playground__subtext">{{ site.playground_subtext }}</p>
+    <div class="playground__viewport">
+      <div class="playground__track">
+        <div class="playground__row">
+          {% for file in playground_images %}
+          <div class="playground__card"><img src="{{ file.path | relative_url }}" alt="UI exploration" loading="lazy"></div>
+          {% endfor %}
+        </div>
+        <div class="playground__row" aria-hidden="true">
+          {% for file in playground_images %}
+          <div class="playground__card"><img src="{{ file.path | relative_url }}" alt="" loading="lazy"></div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="about" class="section">
-    <p class="eyebrow">04 — About</p>
+    <p class="eyebrow">05 — About</p>
     <div class="about-row">
       <p>{{ site.about_excerpt }}</p>
       <a class="btn btn--ghost" href="{{ '/about/' | relative_url }}">More about me →</a>
@@ -157,7 +178,7 @@ layout: default
   </section>
 
   <section class="section">
-    <p class="eyebrow eyebrow--tight">05 — Contact</p>
+    <p class="eyebrow eyebrow--tight">06 — Contact</p>
     <p class="contact__note">{{ site.contact_note }}</p>
     <a class="contact__email" href="mailto:{{ site.email }}">{{ site.email }}</a>
   </section>
