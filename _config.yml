@@ -60,6 +60,11 @@ strategy_items:
     description: "I've onboarded four designers onto the team. When someone moves on, I take their KT, hold their BAU until a replacement joins, then run the handover to the new designer and stay with them through their first tasks until they're comfortable in the system. It keeps work from stalling and gets people productive faster than documentation alone would."
     image: /assets/images/ktsessions.png
 
+# Work
+# false = project cards on the home page are display-only (no link to the case study).
+# Set to true to make the unlocked ones clickable again.
+projects_clickable: false
+
 # Playground
 playground_subtext: "Real work, just not big enough to earn its own case study."
 

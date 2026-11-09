@@ -702,6 +702,7 @@ main { display: block; }
   transform: none;
   box-shadow: none;
 }
+.work-card--locked:hover .work-card__media img { transform: none; }
 .work-card--locked .work-card__arrow { display: none; }
 
 .work-card__top {

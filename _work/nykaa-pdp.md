@@ -10,8 +10,6 @@ metrics:
   - label: "Add to cart"
     value: "+57 bps"
     trend: "up"
-  - label: "Projected impact"
-    value: "~₹59 Cr"
   - "Design initiative"
 order: 0
 ---
@@ -207,8 +205,6 @@ I anchored the price to the Add to Bag button so it stays visible the whole way 
 
 **+24 bps** - add-to-cart uplift (Android + iOS + Mobile Web)
 
-**~₹22.8 Cr** - projected annual revenue impact
-
 *Solves problem #4*
 
 ![Sticky price featured in the org-wide newsletter](/assets/images/pdp13.png)
@@ -256,8 +252,6 @@ Previously, every time a user selected a different shade or size, they had to ma
 ### Impact
 
 **+33 bps** - add-to-cart uplift (Android + iOS + Mobile Web)
-
-**~₹36 Cr** - projected annual revenue impact
 
 *Solves problem #3*
 
@@ -387,7 +381,7 @@ Same page, same shell. What fills it changes depending on what you're buying.
 
 The most useful thing I learned is that taking things away is a design decision. Cutting the sections that repeated themselves did more for clarity than anything new I added.
 
-The second is that being close to the decision beats being detailed. A price bar that stays and a shade selector next to the image mattered more than richer content further down the page. Both changes were small, and together they're worth roughly ₹59 Cr a year in projected impact. That made me think of layout and placement as business decisions, not just visual ones.
+The second is that being close to the decision beats being detailed. A price bar that stays and a shade selector next to the image mattered more than richer content further down the page. Both changes were small, and together they lifted add-to-cart by +57 bps. That made me think of layout and placement as business decisions, not just visual ones.
 
 And there's no one correct order for a product page. What deserves the top of the page genuinely changes depending on what's being sold - and the real limit on that isn't imagination, it's whether the data exists to fill it.
 

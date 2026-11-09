@@ -76,7 +76,7 @@ layout: default
         {% for m in item.metrics %}{% unless m.label %}{% assign badge = m %}{% break %}{% endunless %}{% endfor %}
       {% endunless %}
       {% assign is_locked = false %}
-      {% if item.locked or item.status == "Soon" %}{% assign is_locked = true %}{% endif %}
+      {% if item.locked or item.status == "Soon" or site.projects_clickable == false %}{% assign is_locked = true %}{% endif %}
       {% if is_locked %}
       <div class="work-card work-card--locked" data-reveal>
       {% else %}
